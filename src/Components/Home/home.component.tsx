@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
-import GitHubButton from 'react-github-button';
+import GitHubButton from 'react-github-btn'
 import { useNavigate } from 'react-router-dom';
 import Button from '../Shared/button.component';
 import './Home.css';
@@ -22,7 +22,7 @@ function Home() {
         <h2>Mario Kart Wii Combo Generator</h2>
         <div className={isMobile ? "mobile" : "desktop"}>
           <Button onClick={onClick} buttonText="Generate a combo!" />
-          <a className="github-button" href="https://github.com/JJH47E/mkwii-combo-gen" data-icon="octicon-star" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+          <GitHubButton href="https://github.com/jjh47e/mkwii-combo-gen" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Star jjh47e/mkwii-combo-gen on GitHub">Star</GitHubButton>
         </div>
       </header>
     </div>
