@@ -1,0 +1,9 @@
+.Layout {
+  min-height: 4vh;
+  max-height: 4vh;
+}
+
+nav {
+  min-height: 5vh;
+  max-height: 5vh;
+}

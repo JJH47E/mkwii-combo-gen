@@ -1,0 +1,410 @@
+[
+	{
+		"name": "Baby Mario",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Baby Luigi",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Baby Peach",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Baby Daisy",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Toad",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Toadette",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Koopa Troopa",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Dry Bones",
+		"karts": [
+			"Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat/Baby Booster",
+			"Mini Beast/Concerto",
+			"Cheep Charger",
+			"Tiny Titan/Rally Romper",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike/Nanobike",
+			"Jet Bubble/Bubble Bike"
+		]
+	},
+	{
+		"name": "Mario",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Luigi",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Peach",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Daisy",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Yoshi",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Birdo",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Diddy Kong",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Bowser Jr.",
+		"karts": [
+			"Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster/Nostalgia 1",
+			"Wild Wing",
+			"Super Blooper/Turbo Blooper",
+			"Daytripper/Royal Racer",
+			"Sprinter/B Dasher Mk 2",
+			"Dolphin Dasher",
+			"Sneakster/Nitrocycle",
+			"Zip Zip/Rapide",
+			"Sugarscoot/Bon Bon",
+			"Mach Bike"
+		]
+	},
+	{
+		"name": "Wario",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	},
+	{
+		"name": "Waluigi",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	},
+	{
+		"name": "Donkey Kong",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	},
+	{
+		"name": "Bowser",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	},
+	{
+		"name": "King Boo",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	},
+	{
+		"name": "Rosalina",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	},
+	{
+		"name": "Dry Bowser",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	},
+	{
+		"name": "Funky Kong",
+		"karts": [
+			"Standard Kart L",
+			"Standard Bike L",
+			"Offroader",
+			"Flame Flyer",
+			"Piranha Prowler",
+			"Jetsetter/Aero Glider",
+			"Honeycoupe/Dragonetti",
+			"Phantom",
+			"Spear/Torpedo",
+			"Shooting Star/Twinkle Star",
+			"Wario Bike",
+			"Flame Runner/Bowser Bike"
+		]
+	}
+]

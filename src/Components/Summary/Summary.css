@@ -1,0 +1,34 @@
+.Summary {
+  text-align: center;
+}
+
+.Summary-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Summary-link {
+  color: #61dafb;
+}
+
+div.mobile {
+  width: 90vw;
+}
+
+div.desktop {
+  width: 35vw;
+}
+
+.Summary-header .name {
+  margin-bottom: 0px;
+}
+
+.Summary-header .kart {
+  margin-top: 0px;
+}
