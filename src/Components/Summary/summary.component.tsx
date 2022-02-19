@@ -10,7 +10,7 @@ function Summary() {
   const navigate = useNavigate();
 
   const onClick = () => {
-    navigate('/', {replace: false});
+    navigate('/mkwii-combo-gen/', {replace: false});
   }
 
   const {state} = useLocation();

@@ -13,7 +13,7 @@ function Home() {
   const navigate = useNavigate();
 
   const onClick = () => {
-    navigate('/generate', { replace: false });
+    navigate('/mkwii-combo-gen/generate', { replace: false });
   }
 
   return (

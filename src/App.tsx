@@ -9,10 +9,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/mkwii-combo-gen/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="generate" element={<Generator playerCount={1}/>} />
-          <Route path="summary" element={<Summary />} />
+          <Route path="/mkwii-combo-gen/generate" element={<Generator playerCount={1}/>} />
+          <Route path="/mkwii-combo-gen/summary" element={<Summary />} />
         </Route>
       </Routes>
     </BrowserRouter>

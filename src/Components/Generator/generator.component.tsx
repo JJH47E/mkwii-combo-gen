@@ -40,7 +40,7 @@ function Generator({ playerCount }: GeneratorProps) {
 
     const confirmedKart = () => {
         var selectedCombo = {name: newSelectedCharacter, kart: newSelectedKart};
-        navigate('/summary', { state: { selectedCombo: selectedCombo } });
+        navigate('/mkwii-combo-gen/summary', { state: { selectedCombo: selectedCombo } });
     }
 
     return (
