@@ -5,3 +5,8 @@ div.mobile {
 div.desktop {
   width: 35vw;
 }
+
+.hint {
+  font-size: 12px;
+  padding-bottom: 5px;
+}

@@ -1,9 +1,20 @@
-.Layout {
-  min-height: 4vh;
-  max-height: 4vh;
+Layout {
+  background-color: #282c34;
 }
 
-nav {
+.nav {
   min-height: 5vh;
   max-height: 5vh;
+  display: inline;
+  background-color: #282c34;
+}
+
+.nav img {
+  height: 100%;
+  width: auto;
+}
+
+.nav .right-side {
+  float: right;
+  text-align: right;
 }

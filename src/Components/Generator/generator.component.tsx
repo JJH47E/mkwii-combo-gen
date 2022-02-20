@@ -8,8 +8,8 @@ import { CharacterProps } from "../../Models/Props/character.props";
 import Character from "./Character/character.component";
 import { KartProps } from "../../Models/Props/kart.props";
 import Kart from "./Kart/kart.component";
-import { NavigationType, useNavigate } from "react-router-dom";
-import { PlayerCombo } from "../../Models/player-combo.model";
+import { useNavigate } from "react-router-dom";
+import { getRegionalVariant } from "../../Services/region.service";
 
 var isCharacterConfirmed: boolean;
 
@@ -23,7 +23,7 @@ function Generator({ playerCount }: GeneratorProps) {
     const [newSelectedCharacter, setCharacter] = useState(randomCharacter(ComboData, initialCharacter));
     const [newCharacterConfirmed, setCharacterConfirmed] = useState(isCharacterConfirmed);
     const [newSelectedKart, setKart] = useState("");
-
+    
     const reRollCharacter = () => {
         setCharacter(randomCharacter(ComboData, newSelectedCharacter));
     };
@@ -39,7 +39,7 @@ function Generator({ playerCount }: GeneratorProps) {
     }
 
     const confirmedKart = () => {
-        var selectedCombo = {name: newSelectedCharacter, kart: newSelectedKart};
+        var selectedCombo = {name: newSelectedCharacter, kart: getRegionalVariant(newSelectedKart)};
         navigate('/mkwii-combo-gen/summary', { state: { selectedCombo: selectedCombo } });
     }
 

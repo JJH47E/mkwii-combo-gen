@@ -14,9 +14,9 @@ function Summary() {
   }
 
   const {state} = useLocation();
-  var selectedCombo = (state as SummaryLocationState).selectedCombo;
+  var currentState = state as SummaryLocationState;
 
-  if (selectedCombo == null || selectedCombo == undefined) {
+  if (currentState == null || currentState == undefined) {
     return (
       <div className="Summary">
         <header className="Summary-header">
@@ -29,6 +29,8 @@ function Summary() {
       </div>
     );
   }
+
+  var selectedCombo = currentState.selectedCombo;
 
   return (
     <div className="Summary">
