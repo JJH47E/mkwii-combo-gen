@@ -25,7 +25,7 @@ function Kart({ text, reroll, confirmedChoice }: KartProps) {
     return (
         <div className={isMobile ? "mobile" : "desktop"}>
             <Name text={getRegionalVariant(text)} />
-            <p className="hint">Don't recognise this vehice? <span style={styles.regionSwitch} 
+            <p className="hint">Don't recognise this vehicle? <span style={styles.regionSwitch} 
             onMouseEnter={event => mouseOverStart(event)}
             onMouseLeave={event => mouseOverEnd(event)}onClick={changeRegion}
             >Change region to {getOtherRegion().toUpperCase()}</span></p>
