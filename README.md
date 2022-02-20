@@ -2,6 +2,8 @@
 
 A random combo generator for Mario Kart Wii.
 
+Available here: https://jjh47e.github.io/mkwii-combo-gen/
+
 ## Available Scripts
 
 In the project directory, you can run:
