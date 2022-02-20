@@ -14,13 +14,11 @@ import { getRegionalVariant } from "../../Services/region.service";
 var isCharacterConfirmed: boolean;
 
 function Generator({ playerCount }: GeneratorProps) {
-    var initialCharacter = randomCharacter(ComboData);
-    var initialKart: string;
     isCharacterConfirmed = false;
 
     const navigate = useNavigate();
     
-    const [newSelectedCharacter, setCharacter] = useState(randomCharacter(ComboData, initialCharacter));
+    const [newSelectedCharacter, setCharacter] = useState(randomCharacter(ComboData));
     const [newCharacterConfirmed, setCharacterConfirmed] = useState(isCharacterConfirmed);
     const [newSelectedKart, setKart] = useState("");
     
@@ -34,7 +32,7 @@ function Generator({ playerCount }: GeneratorProps) {
 
     const confirmedCharacter = () => {
         isCharacterConfirmed = true;
-        setKart(randomKart(ComboData, initialCharacter));
+        setKart(randomKart(ComboData, newSelectedCharacter));
         setCharacterConfirmed(isCharacterConfirmed);
     }
 
@@ -84,7 +82,7 @@ function ShowKart({ text, reroll, confirmedChoice, show }: ShowKartProps)
 function randomCharacter(data: CharacterCombo[], currentCharacter: string = ""): string {
     const charactersLength: number = data.length;
     var chosenCharacter = data[getRandomInt(charactersLength)];
-    if (chosenCharacter.name == currentCharacter) {
+    if (chosenCharacter.name === currentCharacter) {
         return randomCharacter(data, currentCharacter);
     }
     else {
@@ -96,18 +94,18 @@ function randomKart(data: CharacterCombo[], character: string, currentKart: stri
     var possibleKarts: string[] = [];
 
     data.forEach(characterKartsCombo => {
-        if (characterKartsCombo.name == character) {
+        if (characterKartsCombo.name === character) {
             possibleKarts = characterKartsCombo.karts;
         }
     });
 
-    if (possibleKarts == []){
+    if (possibleKarts === []){
         throw Error();
     }
 
     const kartsLength: number = possibleKarts.length;
     var chosenKart = possibleKarts[getRandomInt(kartsLength)];
-    if (chosenKart == currentKart) {
+    if (chosenKart === currentKart) {
         return randomKart(data, character, currentKart);
     }
     else {
