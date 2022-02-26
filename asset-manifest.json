@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mkwii-combo-gen/static/css/main.df8eded0.css",
-    "main.js": "/mkwii-combo-gen/static/js/main.3c0582e4.js",
+    "main.css": "/mkwii-combo-gen/static/css/main.2e2c412a.css",
+    "main.js": "/mkwii-combo-gen/static/js/main.9a16eb93.js",
     "static/js/787.780e0664.chunk.js": "/mkwii-combo-gen/static/js/787.780e0664.chunk.js",
     "index.html": "/mkwii-combo-gen/index.html",
-    "main.df8eded0.css.map": "/mkwii-combo-gen/static/css/main.df8eded0.css.map",
-    "main.3c0582e4.js.map": "/mkwii-combo-gen/static/js/main.3c0582e4.js.map",
+    "main.2e2c412a.css.map": "/mkwii-combo-gen/static/css/main.2e2c412a.css.map",
+    "main.9a16eb93.js.map": "/mkwii-combo-gen/static/js/main.9a16eb93.js.map",
     "787.780e0664.chunk.js.map": "/mkwii-combo-gen/static/js/787.780e0664.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df8eded0.css",
-    "static/js/main.3c0582e4.js"
+    "static/css/main.2e2c412a.css",
+    "static/js/main.9a16eb93.js"
   ]
 }
