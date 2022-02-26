@@ -1,6 +1,6 @@
 import React from 'react';
 import Stats from '../../../Models/stats.model';
-import capitalizeFirstLetter from '../../../Utils/StringUtils';
+import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
 import StatGauge from './stat-gauge.component';
 
 function Stat(prop: Stats) {

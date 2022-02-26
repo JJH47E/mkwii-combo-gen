@@ -1,7 +1,7 @@
 import React from 'react';
 import GaugeChart from 'react-gauge-chart';
 import StatGaugeProps from '../../../Models/Props/stat-gauge.props';
-import capitalizeFirstLetter from '../../../Utils/StringUtils';
+import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
 import './StatGauge.css';
 
 const maxStat = 80;
