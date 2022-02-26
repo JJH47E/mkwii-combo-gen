@@ -1,44 +1,52 @@
+import React from 'react';
 import { isMobile } from 'react-device-detect';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { LocationState } from '../../Models/location-state.model';
-import { SummaryProps } from '../../Models/Props/summary.props';
-import { SummaryLocationState } from '../../Models/summary-location-state.model';
+import SummaryLocationState from '../../Models/summary-location-state.model';
+import { getRegionalVariant } from '../../Services/vehicle-mapper.service';
 import Button from '../Shared/button.component';
 import './Summary.css';
 
 function Summary() {
   const navigate = useNavigate();
 
-  const onClick = () => {
-    navigate('/mkwii-combo-gen/', {replace: false});
-  }
+  const homePage = () => {
+    navigate('/mkwii-combo-gen/', { replace: false });
+  };
 
-  const {state} = useLocation();
-  var currentState = state as SummaryLocationState;
+  const statsPage = () => {
+    navigate('/mkwii-combo-gen/stats/summary', {
+      state: { selectedCombo },
+      replace: false,
+    });
+  };
 
-  if (currentState == null || currentState == undefined) {
+  const { state } = useLocation();
+  const currentState = state as SummaryLocationState;
+
+  if (!currentState) {
     return (
-      <div className="Summary">
-        <header className="Summary-header">
+      <div className="summary">
+        <header className="summary-header">
           <h2>Uh Oh..</h2>
           <p>Something has gone wrong</p>
-          <div className={isMobile ? "mobile" : "desktop"}>
-            <Button onClick={onClick} buttonText="Take me home"/>
+          <div className={isMobile ? 'mobile' : 'desktop'}>
+            <Button onClick={homePage} buttonText="Take me home" />
           </div>
         </header>
       </div>
     );
   }
 
-  var selectedCombo = currentState.selectedCombo;
+  let { selectedCombo } = currentState;
 
   return (
-    <div className="Summary">
-      <header className="Summary-header">
+    <div className="summary">
+      <header className="summary-header">
         <h2 className="name">{selectedCombo.name}</h2>
-        <h3 className="kart">{selectedCombo.kart}</h3>
-        <div className={isMobile ? "mobile" : "desktop"}>
-          <Button onClick={onClick} buttonText="Do Another"/>
+        <h3 className="kart">{getRegionalVariant(selectedCombo.kart)}</h3>
+        <div className={isMobile ? 'mobile' : 'desktop'}>
+          <Button onClick={statsPage} buttonText="View Stats" />
+          <Button onClick={homePage} buttonText="Do Another" />
         </div>
       </header>
     </div>

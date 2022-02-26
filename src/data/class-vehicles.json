@@ -1,0 +1,53 @@
+[
+    {
+        "class": "light",
+        "vehicles": [
+            "Standard Kart S",
+			"Standard Bike S",
+			"Booster Seat",
+			"Mini Beast",
+			"Cheep Charger",
+			"Tiny Titan",
+			"Blue Falcon",
+			"Bullet Bike",
+			"Magikruiser",
+			"Quacker",
+			"Bit Bike",
+			"Jet Bubble"
+        ]
+    },
+    {
+        "class": "mid",
+        "vehicles": [
+            "Standard Kart M",
+			"Standard Bike M",
+			"Classic Dragster",
+			"Wild Wing",
+			"Super Blooper",
+			"Daytripper",
+			"Sprinter",
+			"Dolphin Dasher",
+			"Sneakster",
+			"Zip Zip",
+			"Sugarscoot",
+			"Mach Bike"
+        ]
+    },
+    {
+        "class": "heavy",
+        "vehicles": [
+                "Standard Kart L",
+                "Standard Bike L",
+                "Offroader",
+                "Flame Flyer",
+                "Piranha Prowler",
+                "Jetsetter",
+                "Honeycoupe",
+                "Phantom",
+                "Spear",
+                "Shooting Star",
+                "Wario Bike",
+                "Flame Runner"
+        ]
+    }
+]

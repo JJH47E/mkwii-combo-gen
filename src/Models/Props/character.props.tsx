@@ -1,5 +1,5 @@
-export type CharacterProps = {
-    text: string;
-    reroll: () => void;
-    confirmedChoice: () => void;
-};
+export default interface CharacterProps {
+  text: string;
+  reroll: () => void;
+  confirmedChoice: () => void;
+}

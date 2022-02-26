@@ -1,0 +1,290 @@
+[
+	{
+		"name": "Baby Daisy",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 3,
+			"offroad": 0,
+			"speed": 5,
+			"weight": 6
+		}
+	},
+	{
+		"name": "Baby Luigi",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 5,
+			"weight": 8
+		}
+	},
+	{
+		"name": "Baby Mario",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 6,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 0,
+			"weight": 8
+		}
+	},
+	{
+		"name": "Baby Peach",
+		"stats": {
+			"acceleration": 3,
+			"drift": 0,
+			"handling": 3,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 3,
+			"weight": 6
+		}
+	},
+	{
+		"name": "Dry Bones",
+		"stats": {
+			"acceleration": 3,
+			"drift": 3,
+			"handling": 0,
+			"miniturbo": 6,
+			"offroad": 0,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Koopa Troopa",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 3,
+			"miniturbo": 6,
+			"offroad": 0,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Toad",
+		"stats": {
+			"acceleration": 6,
+			"drift": 6,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Toadette",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 6,
+			"speed": 3,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Birdo",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 5,
+			"offroad": 3,
+			"speed": 0,
+			"weight": 3
+		}
+	},
+	{
+		"name": "Bowser Jr.",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 3,
+			"offroad": 3,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Daisy",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 2,
+			"miniturbo": 3,
+			"offroad": 0,
+			"speed": 4,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Diddy Kong",
+		"stats": {
+			"acceleration": 3,
+			"drift": 3,
+			"handling": 0,
+			"miniturbo": 5,
+			"offroad": 0,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Luigi",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 2,
+			"weight": 6
+		}
+	},
+	{
+		"name": "Mario",
+		"stats": {
+			"acceleration": 2,
+			"drift": 3,
+			"handling": 2,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 0,
+			"weight": 6
+		}
+	},
+	{
+		"name": "Peach",
+		"stats": {
+			"acceleration": 5,
+			"drift": 6,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 2,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Yoshi",
+		"stats": {
+			"acceleration": 0,
+			"drift": 3,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 5,
+			"speed": 0,
+			"weight": 3
+		}
+	},
+	{
+		"name": "Bowser",
+		"stats": {
+			"acceleration": 0,
+			"drift": 3,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 0,
+			"speed": 2,
+			"weight": 5
+		}
+	},
+	{
+		"name": "Donkey Kong",
+		"stats": {
+			"acceleration": 2,
+			"drift": 0,
+			"handling": 2,
+			"miniturbo": 3,
+			"offroad": 0,
+			"speed": 0,
+			"weight": 3
+		}
+	},
+	{
+		"name": "Dry Bowser",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 6,
+			"offroad": 6,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Funky Kong",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 3,
+			"speed": 4,
+			"weight": 0
+		}
+	},
+	{
+		"name": "King Boo",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 5,
+			"miniturbo": 0,
+			"offroad": 3,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Rosalina",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 3,
+			"miniturbo": 3,
+			"offroad": 0,
+			"speed": 3,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Waluigi",
+		"stats": {
+			"acceleration": 6,
+			"drift": 5,
+			"handling": 0,
+			"miniturbo": 0,
+			"offroad": 3,
+			"speed": 0,
+			"weight": 0
+		}
+	},
+	{
+		"name": "Wario",
+		"stats": {
+			"acceleration": 0,
+			"drift": 0,
+			"handling": 0,
+			"miniturbo": 6,
+			"offroad": 3,
+			"speed": 0,
+			"weight": 3
+		}
+	}
+]

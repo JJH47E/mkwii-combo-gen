@@ -1,4 +1,4 @@
 export enum Regions {
-    PAL = 'pal',
-    NTSC = 'ntsc'
+  PAL = 'pal',
+  NTSC = 'ntsc',
 }

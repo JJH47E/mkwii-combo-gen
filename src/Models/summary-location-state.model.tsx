@@ -1,6 +1,5 @@
-import { LocationState } from "./location-state.model";
-import { PlayerCombo } from "./player-combo.model";
+import PlayerCombo from './player-combo.model';
 
-export interface SummaryLocationState {
-    selectedCombo: PlayerCombo;
+export default interface SummaryLocationState {
+  selectedCombo: PlayerCombo;
 }

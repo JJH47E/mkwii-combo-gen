@@ -1,3 +1,3 @@
-export type NameProps = {
-    text: string;
-};
+export default interface NameProps {
+  text: string;
+}

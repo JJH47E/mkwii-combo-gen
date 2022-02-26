@@ -1,5 +1,4 @@
-export interface CharacterCombo
-{
-    name: string;
-    karts: string[];
+export default interface CharacterCombo {
+  name: string;
+  karts: string[];
 }

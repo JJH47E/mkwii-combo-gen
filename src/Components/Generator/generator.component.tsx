@@ -1,116 +1,112 @@
-import "./Generator.css";
-import { GeneratorProps } from "../../Models/Props/generator.props";
-import { getRandomInt } from "../../Utils/RandomNumberGenerator";
-import { CharacterCombo } from "../../Models/character-combo.model";
-import ComboData from "../../data/data.json"
-import { useState } from "react";
-import { CharacterProps } from "../../Models/Props/character.props";
-import Character from "./Character/character.component";
-import { KartProps } from "../../Models/Props/kart.props";
-import Kart from "./Kart/kart.component";
-import { useNavigate } from "react-router-dom";
-import { getRegionalVariant } from "../../Services/region.service";
+import React, { useState } from 'react';
+import './Generator.css';
+import { useNavigate } from 'react-router-dom';
+import { getRandomInt } from '../../Utils/RandomNumberGenerator';
+import CharacterData from '../../data/character-class.json';
+import VehicleData from '../../data/class-vehicles.json';
+import Character from './Character/character.component';
+import Kart from './Kart/kart.component';
+import GeneratorProps from '../../Models/Props/generator.props';
+import CharacterDetail from '../../Models/character-detail.model';
+import VehicleClass from '../../Models/vehicle-class.model';
 
-var isCharacterConfirmed: boolean;
+let isCharacterConfirmed: boolean;
 
 function Generator({ playerCount }: GeneratorProps) {
-    isCharacterConfirmed = false;
+  isCharacterConfirmed = false;
 
-    const navigate = useNavigate();
-    
-    const [newSelectedCharacter, setCharacter] = useState(randomCharacter(ComboData));
-    const [newCharacterConfirmed, setCharacterConfirmed] = useState(isCharacterConfirmed);
-    const [newSelectedKart, setKart] = useState("");
-    
-    const reRollCharacter = () => {
-        setCharacter(randomCharacter(ComboData, newSelectedCharacter));
+  const navigate = useNavigate();
+
+  const [newSelectedCharacter, setCharacter] = useState(
+    randomCharacter(CharacterData)
+  );
+  const [newCharacterConfirmed, setCharacterConfirmed] =
+    useState(isCharacterConfirmed);
+  const [newSelectedKart, setKart] = useState('');
+
+  const reRollCharacter = () => {
+    setCharacter(randomCharacter(CharacterData, newSelectedCharacter.name));
+  };
+
+  const reRollKart = () => {
+    setKart(randomKart(VehicleData, newSelectedCharacter, newSelectedKart));
+  };
+
+  const confirmedCharacter = () => {
+    isCharacterConfirmed = true;
+    setKart(randomKart(VehicleData, newSelectedCharacter));
+    setCharacterConfirmed(isCharacterConfirmed);
+  };
+
+  const confirmedKart = () => {
+    const selectedCombo = {
+      name: newSelectedCharacter.name,
+      kart: newSelectedKart,
     };
-
-    const reRollKart = () => {
-        setKart(randomKart(ComboData, newSelectedCharacter, newSelectedKart));
-    };
-
-    const confirmedCharacter = () => {
-        isCharacterConfirmed = true;
-        setKart(randomKart(ComboData, newSelectedCharacter));
-        setCharacterConfirmed(isCharacterConfirmed);
-    }
-
-    const confirmedKart = () => {
-        var selectedCombo = {name: newSelectedCharacter, kart: getRegionalVariant(newSelectedKart)};
-        navigate('/mkwii-combo-gen/summary', { state: { selectedCombo: selectedCombo } });
-    }
-
-    return (
-        <div className="Generator">
-            <header className="Generator-header">
-                <ShowCharacter reroll={reRollCharacter} confirmedChoice={confirmedCharacter} text={newSelectedCharacter} show={newCharacterConfirmed}/>
-                <ShowKart reroll={reRollKart} confirmedChoice={confirmedKart} text={newSelectedKart} show={newCharacterConfirmed}/>
-            </header>
-        </div>
-    );
-}
-
-interface ShowCharacterProps extends CharacterProps{
-    show: boolean;
-}
-
-function ShowCharacter({ text, reroll, confirmedChoice, show }: ShowCharacterProps)
-{
-    if (!show){
-        return(
-            <Character reroll={reroll} confirmedChoice={confirmedChoice} text={text} />
-        );
-    }
-    return(<></>);
-}
-
-interface ShowKartProps extends KartProps{
-    show: boolean;
-}
-
-function ShowKart({ text, reroll, confirmedChoice, show }: ShowKartProps)
-{
-    if (show){
-        return(
-            <Kart reroll={reroll} confirmedChoice={confirmedChoice} text={text} />
-        );
-    }
-    return(<></>);
-}
-
-function randomCharacter(data: CharacterCombo[], currentCharacter: string = ""): string {
-    const charactersLength: number = data.length;
-    var chosenCharacter = data[getRandomInt(charactersLength)];
-    if (chosenCharacter.name === currentCharacter) {
-        return randomCharacter(data, currentCharacter);
-    }
-    else {
-        return chosenCharacter.name;
-    }
-}
-
-function randomKart(data: CharacterCombo[], character: string, currentKart: string = ""): string {
-    var possibleKarts: string[] = [];
-
-    data.forEach(characterKartsCombo => {
-        if (characterKartsCombo.name === character) {
-            possibleKarts = characterKartsCombo.karts;
-        }
+    navigate('/mkwii-combo-gen/summary', {
+      state: { selectedCombo },
     });
+  };
 
-    if (possibleKarts === []){
-        throw Error();
-    }
+  return (
+    <div className="generator">
+      <header className="generator-header">
+        {!newCharacterConfirmed ? (
+          <Character
+            reroll={reRollCharacter}
+            confirmedChoice={confirmedCharacter}
+            text={newSelectedCharacter.name}
+          />
+        ) : (
+          <Kart
+            reroll={reRollKart}
+            confirmedChoice={confirmedKart}
+            text={newSelectedKart}
+          />
+        )}
+      </header>
+    </div>
+  );
+}
 
-    const kartsLength: number = possibleKarts.length;
-    var chosenKart = possibleKarts[getRandomInt(kartsLength)];
-    if (chosenKart === currentKart) {
-        return randomKart(data, character, currentKart);
+function randomCharacter(
+  data: CharacterDetail[],
+  currentCharacter = ''
+): CharacterDetail {
+  const charactersLength = data.length;
+  const chosenCharacter = data[getRandomInt(charactersLength)];
+  if (chosenCharacter.name === currentCharacter) {
+    return randomCharacter(data, currentCharacter);
+  }
+
+  return chosenCharacter;
+}
+
+function randomKart(
+  data: VehicleClass[],
+  character: CharacterDetail,
+  currentKart = ''
+): string {
+  let possibleKarts: string[] = [];
+
+  data.forEach(vehicleClass => {
+    if (vehicleClass.class === character.class) {
+      possibleKarts = vehicleClass.vehicles;
     }
-    else {
-        return chosenKart;
-    }
+  });
+
+  if (possibleKarts === []) {
+    throw Error();
+  }
+
+  const kartsLength = possibleKarts.length;
+
+  const chosenKart = possibleKarts[getRandomInt(kartsLength)];
+  if (chosenKart === currentKart) {
+    return randomKart(data, character, currentKart);
+  }
+
+  return chosenKart;
 }
 
 export default Generator;

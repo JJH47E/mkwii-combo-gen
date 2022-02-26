@@ -1,0 +1,98 @@
+[
+	{
+		"name": "Baby Mario",
+		"class": "light"
+	},
+	{
+		"name": "Baby Luigi",
+		"class": "light"
+	},
+	{
+		"name": "Baby Peach",
+		"class": "light"
+	},
+	{
+		"name": "Baby Daisy",
+		"class": "light"
+	},
+	{
+		"name": "Toad",
+		"class": "light"
+	},
+	{
+		"name": "Toadette",
+		"class": "light"
+	},
+	{
+		"name": "Koopa Troopa",
+		"class": "light"
+	},
+	{
+		"name": "Dry Bones",
+		"class": "light"
+	},
+	{
+		"name": "Mario",
+		"class": "mid"
+	},
+	{
+		"name": "Luigi",
+		"class": "mid"
+	},
+	{
+		"name": "Peach",
+		"class": "mid"
+	},
+	{
+		"name": "Daisy",
+		"class": "mid"
+	},
+	{
+		"name": "Yoshi",
+		"class": "mid"
+	},
+	{
+		"name": "Birdo",
+		"class": "mid"
+	},
+	{
+		"name": "Diddy Kong",
+		"class": "mid"
+	},
+	{
+		"name": "Bowser Jr.",
+		"class": "mid"
+	},
+	{
+		"name": "Wario",
+		"class": "heavy"
+	},
+	{
+		"name": "Waluigi",
+		"class": "heavy"
+	},
+	{
+		"name": "Donkey Kong",
+		"class": "heavy"
+	},
+	{
+		"name": "Bowser",
+		"class": "heavy"
+	},
+	{
+		"name": "King Boo",
+		"class": "heavy"
+	},
+	{
+		"name": "Rosalina",
+		"class": "heavy"
+	},
+	{
+		"name": "Dry Bowser",
+		"class": "heavy"
+	},
+	{
+		"name": "Funky Kong",
+		"class": "heavy"
+	}
+]

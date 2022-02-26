@@ -1,12 +1,12 @@
-Layout {
+.layout {
   background-color: #282c34;
 }
 
 .nav {
-  min-height: 5vh;
-  max-height: 5vh;
-  display: inline;
   background-color: #282c34;
+  display: inline;
+  max-height: 5vh;
+  min-height: 5vh;
 }
 
 .nav img {

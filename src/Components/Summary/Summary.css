@@ -1,34 +1,34 @@
-.Summary {
+.summary {
   text-align: center;
 }
 
-.Summary-header {
+.summary-header {
+  align-items: center;
   background-color: #282c34;
-  min-height: 100vh;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-.Summary-link {
+.summary-link {
   color: #61dafb;
 }
 
-div.mobile {
+.mobile {
   width: 90vw;
 }
 
-div.desktop {
+.desktop {
   width: 35vw;
 }
 
-.Summary-header .name {
-  margin-bottom: 0px;
+.summary-header .name {
+  margin-bottom: 0;
 }
 
-.Summary-header .kart {
-  margin-top: 0px;
+.summary-header .kart {
+  margin-top: 0;
 }

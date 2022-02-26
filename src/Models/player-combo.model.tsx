@@ -1,5 +1,4 @@
-export interface PlayerCombo
-{
-    name: string;
-    kart: string;
+export default interface PlayerCombo {
+  name: string;
+  kart: string;
 }

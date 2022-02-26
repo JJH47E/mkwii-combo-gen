@@ -1,3 +1,3 @@
-export type GeneratorProps = {
-    playerCount: number;
-};
+export default interface GeneratorProps {
+  playerCount: number;
+}

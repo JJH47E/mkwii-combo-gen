@@ -1,4 +1,4 @@
-export type ButtonProps = {
-    onClick: () => void;
-    buttonText: string;
-};
+export default interface ButtonProps {
+  onClick: () => void;
+  buttonText: string;
+}

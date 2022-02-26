@@ -1,5 +1,5 @@
-import { PlayerCombo } from "../player-combo.model";
+import PlayerCombo from '../player-combo.model';
 
-export type SummaryProps = {
-    combo?: PlayerCombo;
-};
+export default interface SummaryProps {
+  combo?: PlayerCombo;
+}
