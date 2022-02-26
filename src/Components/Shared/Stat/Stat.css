@@ -1,0 +1,26 @@
+.progrss-label {
+  font-size: auto;
+  text-align: right;
+}
+
+.line-div {
+  display: block !important;
+}
+
+.label-div {
+  width: 25%;
+}
+
+.progress-bar-div {
+  width: 75%;
+}
+
+.orange-progress-bar .progress-bar {
+  background-color: #ff7255;
+}
+
+.stat-container {
+  display: inline-flex;
+  padding: 20px;
+  width: 50%;
+}

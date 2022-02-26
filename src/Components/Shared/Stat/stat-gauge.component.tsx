@@ -1,26 +1,33 @@
 import React from 'react';
-import GaugeChart from 'react-gauge-chart';
+import { ProgressBar } from 'react-bootstrap';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import { isMobile } from 'react-device-detect';
 import StatGaugeProps from '../../../Models/Props/stat-gauge.props';
 import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
-import './StatGauge.css';
+import './Stat.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-circular-progressbar/dist/styles.css';
 
 const maxStat = 80;
 
-function StatGauge({ statName, statValue }: StatGaugeProps) {
-  const formatText = () => {
-    return statValue.toString();
-  };
-
+function StatGauge({ statName, statValue, color }: StatGaugeProps) {
   return (
-    <div className="gauge">
-      <p>{capitalizeFirstLetter(statName)}</p>
-      <GaugeChart
-        id={statName}
-        percent={(statValue as number) / maxStat}
-        animate={false}
-        nrOfLevels={30}
-        colors={['#fa930c', '#8EA686', '#21b9ff']}
-        formatTextValue={formatText}
+    <div className="stat-container">
+      <CircularProgressbar
+        value={statValue as number}
+        maxValue={80}
+        text={`${capitalizeFirstLetter(statName)}: ${statValue.toString()}`}
+        strokeWidth={6}
+        styles={{
+          path: {
+            stroke: color,
+            strokeLinecap: 'butt',
+          },
+          text: {
+            fill: '#fff',
+            fontSize: '0.5em',
+          },
+        }}
       />
     </div>
   );
