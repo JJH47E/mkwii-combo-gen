@@ -12,8 +12,12 @@ function Home() {
 
   const navigate = useNavigate();
 
-  const onClick = () => {
+  const onClickGen = () => {
     navigate('/mkwii-combo-gen/generate', { replace: false });
+  };
+
+  const onClickStats = () => {
+    navigate('/mkwii-combo-gen/stats', { replace: false });
   };
 
   return (
@@ -21,7 +25,8 @@ function Home() {
       <header className="home-header">
         <h2>Mario Kart Wii Combo Generator</h2>
         <div className={isMobile ? 'mobile' : 'desktop'}>
-          <Button onClick={onClick} buttonText="Generate a combo!" />
+          <Button onClick={onClickStats} buttonText="Stat Checker" />
+          <Button onClick={onClickGen} buttonText="Generate a combo!" />
           <GitHubButton
             href="https://github.com/jjh47e/mkwii-combo-gen"
             data-color-scheme="no-preference: dark; light: dark; dark: dark;"

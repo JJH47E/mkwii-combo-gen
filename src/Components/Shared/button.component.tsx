@@ -30,6 +30,7 @@ function Button({ onClick, buttonText }: ButtonProps) {
     <button
       style={styles.button}
       type="submit"
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       onClick={onClick}
       onMouseEnter={event => mouseOverStart(event)}
       onMouseLeave={event => mouseOverEnd(event)}
