@@ -1,11 +1,14 @@
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 import { useLocation, useNavigate } from 'react-router-dom';
+import KartStats from '../../../Models/kart-stats.model';
+import CharacterStats from '../../../Models/character-stats.model';
 import SummaryLocationState from '../../../Models/summary-location-state.model';
 import { getVehicleStats } from '../../../Services/vehicle-stats.service';
 import Button from '../../Shared/button.component';
 import Stat from '../../Shared/Stat/stat.component';
 import './StatsSummary.css';
+import { getCharacterStats } from '../../../Services/chartacter-stats.service';
 
 function StatsSummary() {
   const navigate = useNavigate();
@@ -32,7 +35,10 @@ function StatsSummary() {
   }
 
   const { selectedCombo } = currentState;
-  const { stats } = getVehicleStats(selectedCombo.kart);
+  let { stats } = getVehicleStats(selectedCombo.kart);
+
+  // add on character stats
+  stats = sumStats(stats, getCharacterStats(selectedCombo.name));
 
   return (
     <div className="summary">
@@ -57,6 +63,22 @@ function StatsSummary() {
       </header>
     </div>
   );
+}
+
+function sumStats(
+  kartStats: KartStats,
+  characterStats: CharacterStats
+): KartStats {
+  return {
+    driftType: kartStats.driftType,
+    speed: kartStats.speed + characterStats.speed,
+    weight: kartStats.weight + characterStats.weight,
+    acceleration: kartStats.acceleration + characterStats.acceleration,
+    handling: kartStats.handling + characterStats.handling,
+    drift: kartStats.drift + characterStats.drift,
+    offroad: kartStats.offroad + characterStats.offroad,
+    miniturbo: kartStats.miniturbo + characterStats.miniturbo,
+  } as KartStats;
 }
 
 export default StatsSummary;

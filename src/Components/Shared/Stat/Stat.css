@@ -15,12 +15,19 @@
   width: 75%;
 }
 
-.orange-progress-bar .progress-bar {
-  background-color: #ff7255;
+.stat-container {
+  display: inline-block;
+  padding: 20px;
 }
 
-.stat-container {
-  display: inline-flex;
-  padding: 20px;
-  width: 50%;
+.stat-header {
+  display: block;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.gauge {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
 }

@@ -1,36 +1,42 @@
 import React from 'react';
-import { ProgressBar } from 'react-bootstrap';
-import { CircularProgressbar } from 'react-circular-progressbar';
-import { isMobile } from 'react-device-detect';
+import { RadialProgress } from 'react-radial-progress-indicator';
 import StatGaugeProps from '../../../Models/Props/stat-gauge.props';
 import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
 import './Stat.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-circular-progressbar/dist/styles.css';
 
 const maxStat = 80;
 
-function StatGauge({ statName, statValue, color }: StatGaugeProps) {
+function StatGauge({ statName, statValue }: StatGaugeProps) {
+  const formatText = (steps: number, proportion: number) => {
+    return statValue;
+  };
+
   return (
     <div className="stat-container">
-      <CircularProgressbar
-        value={statValue as number}
-        maxValue={80}
-        text={`${capitalizeFirstLetter(statName)}: ${statValue.toString()}`}
-        strokeWidth={6}
-        styles={{
-          path: {
-            stroke: color,
-            strokeLinecap: 'butt',
-          },
-          text: {
-            fill: '#fff',
-            fontSize: '0.5em',
-          },
-        }}
-      />
+      <div className="gauge">
+        <RadialProgress
+          steps={40}
+          step={(statValue as number) / 2}
+          duration={2000}
+          ringThickness={0.15}
+          ringFgColour={getBarColor(statValue as number)}
+          text={formatText}
+        />
+      </div>
+      <p className="stat-header">{capitalizeFirstLetter(statName)}</p>
     </div>
   );
+}
+
+function getBarColor(stat: number): string {
+  if (stat < 40) {
+    return '#CC3232';
+  }
+  if (stat < 60) {
+    return '#E7B416';
+  }
+
+  return '#2DC937';
 }
 
 export default StatGauge;

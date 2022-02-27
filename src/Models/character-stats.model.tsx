@@ -1,7 +1,6 @@
-export default interface Stats {
+export default interface CharacterStats {
   acceleration: number;
   drift: number;
-  driftType: string;
   handling: number;
   miniturbo: number;
   offroad: number;
