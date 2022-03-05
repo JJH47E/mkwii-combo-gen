@@ -3,10 +3,11 @@ import React from 'react';
 import { isMobile } from 'react-device-detect';
 import Button from '../../Shared/button.component';
 import Name from '../Shared/name.component';
-import './Kart.css';
 import { getOtherRegion, switchRegion } from '../../../Services/region.service';
 import { getRegionalVariant } from '../../../Services/vehicle-mapper.service';
 import KartProps from '../../../Models/Props/kart.props';
+import '../../../Root.scss';
+import RegionSwitch from '../../Shared/region-switch.component';
 
 const mouseOverStart = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
   const { style } = event.target as HTMLElement;
@@ -24,22 +25,9 @@ function Kart({ text, reroll, confirmedChoice }: KartProps) {
   };
 
   return (
-    <div className={isMobile ? 'mobile' : 'desktop'}>
+    <div className="page-content">
       <Name text={getRegionalVariant(text)} />
-      <p className="hint">
-        Don&apos;t recognise this vehicle?&nbsp;
-        <span
-          role="button"
-          tabIndex={0}
-          style={styles.regionSwitch}
-          onMouseEnter={event => mouseOverStart(event)}
-          onMouseLeave={event => mouseOverEnd(event)}
-          onClick={changeRegion}
-          onKeyDown={changeRegion}
-        >
-          Change region to {getOtherRegion().toUpperCase()}
-        </span>
-      </p>
+      <RegionSwitch />
       <Button onClick={reroll} buttonText="Reroll" />
       <br />
       <Button onClick={confirmedChoice} buttonText="Confirm" />

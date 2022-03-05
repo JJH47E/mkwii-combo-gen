@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { isMobile } from 'react-device-detect';
 import GitHubButton from 'react-github-btn';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Shared/button.component';
-import './Home.css';
+import '../../Root.scss';
 
 function Home() {
   useEffect(() => {
@@ -21,10 +20,10 @@ function Home() {
   };
 
   return (
-    <div className="home">
-      <header className="home-header">
+    <div className="component">
+      <header className="component-header">
         <h2>Mario Kart Wii Combo Generator</h2>
-        <div className={isMobile ? 'mobile' : 'desktop'}>
+        <div className="page-content">
           <Button onClick={onClickStats} buttonText="Stat Checker" />
           <Button onClick={onClickGen} buttonText="Generate a combo!" />
           <GitHubButton

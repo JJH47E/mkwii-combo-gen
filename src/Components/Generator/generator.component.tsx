@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Generator.css';
+import '../../Root.scss';
 import { useNavigate } from 'react-router-dom';
 import { getRandomInt } from '../../Utils/RandomNumberGenerator';
 import CharacterData from '../../data/character-class.json';
@@ -43,14 +44,14 @@ function Generator({ playerCount }: GeneratorProps) {
       name: newSelectedCharacter.name,
       kart: newSelectedKart,
     };
-    navigate('/mkwii-combo-gen/summary', {
+    navigate('/mkwii-combo-gen/generate/summary', {
       state: { selectedCombo },
     });
   };
 
   return (
-    <div className="generator">
-      <header className="generator-header">
+    <div className="component">
+      <header className="component-header">
         {!newCharacterConfirmed ? (
           <Character
             reroll={reRollCharacter}

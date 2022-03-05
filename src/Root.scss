@@ -1,0 +1,147 @@
+@import 'include-media';
+@import 'variables';
+
+$breakpoints: (phone: 570px, tablet: 768px, desktop: 1024px);
+
+.layout {
+  background-color: #282c34;
+}
+
+.navbar {
+  @include media("<=phone") {
+    min-height: $mobileNavbarHeight;
+    max-height: $mobileNavbarHeight;
+  }
+  @include media(">phone") {
+    min-height: $desktopNavbarHeight;
+    max-height: $desktopNavbarHeight;
+  }
+  background-color: #21252b;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+  display: block;
+}
+
+.outlet {
+  @include media("<=phone") {
+    height: calc(100vh - #{$mobileNavbarHeight});
+    padding-top: $mobileNavbarHeight;
+  }
+  @include media(">phone") {
+    height: calc(100vh - #{$desktopNavbarHeight});
+    padding-top: $desktopNavbarHeight;
+  }
+}
+
+.component {
+  text-align: center;
+  width: 100%;
+}
+
+.component-header {
+  align-items: center;
+  background-color: #282c34;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  justify-content: center;
+}
+
+.page-content {
+  @include media("<=phone") {
+    padding-bottom: $mobileContentPadding;
+    width: $portraitContentWidth;
+  }
+  @include media(">phone") {
+    padding-bottom: $desktopContentPadding;
+    width: $landscapeContentWidth;
+  }
+}
+
+.stat-summary-content {
+  @include media("<=phone") {
+    padding-bottom: $mobileContentPadding;
+    width: $portraitContentWidth;
+  }
+  @include media(">phone") {
+    padding-bottom: $desktopContentPadding;
+    width: $landscapeStatWidth;
+  }
+}
+
+.component-header .name {
+  margin-bottom: 0px;
+  padding-top: 10px;
+}
+
+.component-header .kart {
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 12px;
+  padding-bottom: 5px;
+}
+
+.back-button-container {
+  display: inline;
+  @include media("<=phone") {
+    min-height: $mobileNavbarHeight;
+    max-height: $mobileNavbarHeight;
+  }
+  @include media(">phone") {
+    min-height: $desktopNavbarHeight;
+    max-height: $desktopNavbarHeight;
+  }
+}
+
+.back-button {
+  border: none;
+  background-color: #21252b;
+  height: 100%;
+  color: #fff;
+  @include media("<=phone") {
+    padding-top: calc((#{$mobileNavbarHeight} / 2) - 12px);
+    padding-left: 24px;
+    font-size: calc(#{$mobileNavbarHeight} * 0.5);
+  }
+  @include media(">phone") {
+    padding-top: calc((#{$desktopNavbarHeight} / 2) - 12px);
+    padding-left: 24px;
+    font-size: calc(#{$desktopNavbarHeight} * 0.5);
+  }
+}
+
+.home-button-container {
+  display: inline;
+  float: right;
+  @include media("<=phone") {
+    min-height: $mobileNavbarHeight;
+    max-height: $mobileNavbarHeight;
+  }
+  @include media(">phone") {
+    min-height: $desktopNavbarHeight;
+    max-height: $desktopNavbarHeight;
+  }
+}
+
+.home-button {
+  border: none;
+  background-color: #21252b;
+  height: 100%;
+  color: #fff;
+  @include media("<=phone") {
+    padding-top: calc((#{$mobileNavbarHeight} / 2) - 12px);
+    padding-right: 24px;
+    font-size: calc(#{$mobileNavbarHeight} * 0.5);
+  }
+  @include media(">phone") {
+    padding-top: calc((#{$desktopNavbarHeight} / 2) - 12px);
+    padding-right: 24px;
+    font-size: calc(#{$desktopNavbarHeight} * 0.5);
+  }
+}

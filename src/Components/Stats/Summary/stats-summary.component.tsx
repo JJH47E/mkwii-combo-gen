@@ -1,5 +1,4 @@
-import React from 'react';
-import { isMobile } from 'react-device-detect';
+import React, { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import KartStats from '../../../Models/kart-stats.model';
 import CharacterStats from '../../../Models/character-stats.model';
@@ -7,8 +6,9 @@ import SummaryLocationState from '../../../Models/summary-location-state.model';
 import { getVehicleStats } from '../../../Services/vehicle-stats.service';
 import Button from '../../Shared/button.component';
 import Stat from '../../Shared/Stat/stat.component';
-import './StatsSummary.css';
 import { getCharacterStats } from '../../../Services/chartacter-stats.service';
+import '../../../Root.scss';
+import { getRegionalVariant } from '../../../Services/vehicle-mapper.service';
 
 function StatsSummary() {
   const navigate = useNavigate();
@@ -22,11 +22,11 @@ function StatsSummary() {
 
   if (!currentState) {
     return (
-      <div className="summary">
-        <header className="summary-header">
+      <div className="component">
+        <header className="component-header">
           <h2>Uh Oh..</h2>
           <p>Something has gone wrong</p>
-          <div className={isMobile ? 'mobile' : 'desktop'}>
+          <div className="page-content">
             <Button onClick={homePage} buttonText="Take me home" />
           </div>
         </header>
@@ -41,11 +41,11 @@ function StatsSummary() {
   stats = sumStats(stats, getCharacterStats(selectedCombo.name));
 
   return (
-    <div className="summary">
-      <header className="summary-header">
+    <div className="component">
+      <header className="component-header">
         <h2 className="name">{selectedCombo.name}</h2>
-        <h3 className="kart">{selectedCombo.kart}</h3>
-        <div className={isMobile ? 'stat-gauge-mobile' : 'stat-gauge-desktop'}>
+        <h3 className="kart">{getRegionalVariant(selectedCombo.kart)}</h3>
+        <div className="stat-summary-content">
           <Stat
             driftType={stats.driftType}
             speed={stats.speed}
@@ -57,8 +57,8 @@ function StatsSummary() {
             miniturbo={stats.miniturbo}
           />
         </div>
-        <div className={isMobile ? 'mobile' : 'desktop'}>
-          <Button onClick={homePage} buttonText="Back" />
+        <div className="page-content">
+          <Button onClick={homePage} buttonText="Home" />
         </div>
       </header>
     </div>
