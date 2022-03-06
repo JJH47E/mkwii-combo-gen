@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mkwii-combo-gen/static/css/main.ad3f8c7e.css",
-    "main.js": "/mkwii-combo-gen/static/js/main.10655983.js",
+    "main.css": "/mkwii-combo-gen/static/css/main.138f8d56.css",
+    "main.js": "/mkwii-combo-gen/static/js/main.92d38efc.js",
     "static/js/787.780e0664.chunk.js": "/mkwii-combo-gen/static/js/787.780e0664.chunk.js",
     "static/media/material-icons-two-tone.woff": "/mkwii-combo-gen/static/media/material-icons-two-tone.169d9845612b754f6086.woff",
     "static/media/material-icons-two-tone.woff2": "/mkwii-combo-gen/static/media/material-icons-two-tone.20196d7544af60588088.woff2",
@@ -14,12 +14,12 @@
     "static/media/material-icons-sharp.woff2": "/mkwii-combo-gen/static/media/material-icons-sharp.74f9d37f0ed879edf5af.woff2",
     "static/media/material-icons.woff2": "/mkwii-combo-gen/static/media/material-icons.a3e4b8576868d394c1da.woff2",
     "index.html": "/mkwii-combo-gen/index.html",
-    "main.ad3f8c7e.css.map": "/mkwii-combo-gen/static/css/main.ad3f8c7e.css.map",
-    "main.10655983.js.map": "/mkwii-combo-gen/static/js/main.10655983.js.map",
+    "main.138f8d56.css.map": "/mkwii-combo-gen/static/css/main.138f8d56.css.map",
+    "main.92d38efc.js.map": "/mkwii-combo-gen/static/js/main.92d38efc.js.map",
     "787.780e0664.chunk.js.map": "/mkwii-combo-gen/static/js/787.780e0664.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad3f8c7e.css",
-    "static/js/main.10655983.js"
+    "static/css/main.138f8d56.css",
+    "static/js/main.92d38efc.js"
   ]
 }
