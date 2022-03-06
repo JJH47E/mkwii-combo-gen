@@ -14,7 +14,7 @@ function Layout() {
   return (
     <div className="layout">
       <div className="d-block">
-        <Container fluid className="position-fixed">
+        <Container fluid className="position-fixed always-on-top">
           <Row className="navbar">
             <Col xs xl="1">
               <BackButton />
