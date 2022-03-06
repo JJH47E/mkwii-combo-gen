@@ -22,7 +22,7 @@ function Home() {
   return (
     <div className="component">
       <header className="component-header">
-        <h2>Mario Kart Wii Combo Generator</h2>
+        <h2 className="title">Mario Kart Wii Combo Generator</h2>
         <div className="page-content">
           <Button onClick={onClickStats} buttonText="Stat Checker" />
           <Button onClick={onClickGen} buttonText="Generate a combo!" />

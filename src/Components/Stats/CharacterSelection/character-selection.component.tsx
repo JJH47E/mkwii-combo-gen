@@ -21,7 +21,7 @@ function CharacterSelection() {
   return (
     <div className="component">
       <header className="component-header">
-        <h2>Select a Character</h2>
+        <h2 className="title">Select a Character</h2>
         <div className="page-content">
           {characterData.map((character: CharacterDetail) => {
             return (

@@ -19,13 +19,9 @@ function HomeButton() {
 
   if (url !== siteRoot && url !== `${siteRoot}/`) {
     return (
-      <div className="home-button-container">
-        <button className="home-button">
-          <span onClick={goHome} className="material-icons">
-            home
-          </span>
-        </button>
-      </div>
+      <button className="home-button material-icons" onClick={goHome}>
+        home
+      </button>
     );
   }
 

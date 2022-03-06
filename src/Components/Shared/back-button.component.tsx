@@ -19,13 +19,9 @@ function BackButton() {
 
   if (url !== siteRoot && url !== `${siteRoot}/`) {
     return (
-      <div className="back-button-container">
-        <button className="back-button">
-          <span onClick={goHome} className="material-icons">
-            arrow_back
-          </span>
-        </button>
-      </div>
+      <button className="back-button material-icons" onClick={goHome}>
+        arrow_back
+      </button>
     );
   }
 

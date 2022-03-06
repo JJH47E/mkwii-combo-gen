@@ -17,21 +17,18 @@ $breakpoints: (phone: 570px, tablet: 768px, desktop: 1024px);
     max-height: $desktopNavbarHeight;
   }
   background-color: #21252b;
-  position: fixed;
-  width: 100vw;
   z-index: 100;
-  display: block;
+  padding: 0px !important;
 }
 
 .outlet {
   @include media("<=phone") {
-    height: calc(100vh - #{$mobileNavbarHeight});
     padding-top: $mobileNavbarHeight;
   }
   @include media(">phone") {
-    height: calc(100vh - #{$desktopNavbarHeight});
     padding-top: $desktopNavbarHeight;
   }
+  height: 100vh;
 }
 
 .component {
@@ -87,61 +84,46 @@ $breakpoints: (phone: 570px, tablet: 768px, desktop: 1024px);
   padding-bottom: 5px;
 }
 
-.back-button-container {
-  display: inline;
-  @include media("<=phone") {
-    min-height: $mobileNavbarHeight;
-    max-height: $mobileNavbarHeight;
-  }
-  @include media(">phone") {
-    min-height: $desktopNavbarHeight;
-    max-height: $desktopNavbarHeight;
-  }
-}
-
 .back-button {
   border: none;
-  background-color: #21252b;
-  height: 100%;
+  background: none;
   color: #fff;
+  float: left;
   @include media("<=phone") {
-    padding-top: calc((#{$mobileNavbarHeight} / 2) - 12px);
-    padding-left: 24px;
-    font-size: calc(#{$mobileNavbarHeight} * 0.5);
+    font-size: calc(#{$mobileNavbarHeight} * 0.5) !important;
   }
   @include media(">phone") {
-    padding-top: calc((#{$desktopNavbarHeight} / 2) - 12px);
-    padding-left: 24px;
-    font-size: calc(#{$desktopNavbarHeight} * 0.5);
-  }
-}
-
-.home-button-container {
-  display: inline;
-  float: right;
-  @include media("<=phone") {
-    min-height: $mobileNavbarHeight;
-    max-height: $mobileNavbarHeight;
-  }
-  @include media(">phone") {
-    min-height: $desktopNavbarHeight;
-    max-height: $desktopNavbarHeight;
+    font-size: calc(#{$desktopNavbarHeight} * 0.5) !important;
   }
 }
 
 .home-button {
   border: none;
-  background-color: #21252b;
-  height: 100%;
+  background: none;
   color: #fff;
+  float: right;
   @include media("<=phone") {
-    padding-top: calc((#{$mobileNavbarHeight} / 2) - 12px);
-    padding-right: 24px;
-    font-size: calc(#{$mobileNavbarHeight} * 0.5);
+    font-size: calc(#{$mobileNavbarHeight} * 0.5) !important;
   }
   @include media(">phone") {
-    padding-top: calc((#{$desktopNavbarHeight} / 2) - 12px);
-    padding-right: 24px;
-    font-size: calc(#{$desktopNavbarHeight} * 0.5);
+    font-size: calc(#{$desktopNavbarHeight} * 0.5) !important;
   }
+}
+
+.navbar-title {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 auto !important;
+  @include media("<=phone") {
+    font-size: calc(#{$mobileNavbarHeight} * 0.3) !important;
+  }
+  @include media(">phone") {
+    font-size: calc(#{$desktopNavbarHeight} * 0.4) !important;
+  }
+}
+
+.title {
+  padding-top: 3vh;
+  padding-bottom: 3vh;
 }
