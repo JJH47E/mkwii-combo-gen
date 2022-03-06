@@ -23,6 +23,10 @@ function SiteRoutes() {
           element={<Generator playerCount={1} />}
         />
         <Route path="/mkwii-combo-gen/generate/summary" element={<Summary />} />
+        <Route
+          path="/mkwii-combo-gen/generate/summary/stats"
+          element={<StatsSummary />}
+        />
         <Route path="/mkwii-combo-gen/stats" element={<CharacterSelection />} />
         <Route
           path="/mkwii-combo-gen/stats/vehicle"

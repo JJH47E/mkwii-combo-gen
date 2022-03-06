@@ -10,6 +10,8 @@ import PlayerCombo from '../../../Models/player-combo.model';
 import { getOtherRegion, switchRegion } from '../../../Services/region.service';
 import { getRegionalVariant } from '../../../Services/vehicle-mapper.service';
 import RegionSwitch from '../../Shared/region-switch.component';
+import { globalGetCharacter } from '../../../Services/character-selection.service';
+import { getCharacterClass } from '../../../Services/chartacter-stats.service';
 
 const vehicleData = VehicleData as VehicleClass[];
 
@@ -35,21 +37,15 @@ function KartSelection() {
   };
 
   function onKartSelectFn(character: CharacterDetail, kart: string) {
-    const selectedCombo: PlayerCombo = {
-      name: character.name,
-      kart,
-    };
     window.scrollTo(0, 0);
     navigate('/mkwii-combo-gen/stats/summary', {
-      state: { selectedCombo },
       replace: false,
     });
   }
 
-  const { state } = useLocation();
-  const currentState = state as KartStatSelection;
+  const character = globalGetCharacter();
 
-  if (!currentState) {
+  if (!character) {
     return (
       <div className="component">
         <header className="component-header">
@@ -63,9 +59,10 @@ function KartSelection() {
     );
   }
 
-  const { character } = currentState;
+  const characterClass = getCharacterClass(character);
+  const characterDetail = { name: character, class: characterClass };
 
-  const karts = vehicleData.find(v => v.class === character.class)
+  const karts = vehicleData.find(v => v.class === characterClass)
     ?.vehicles as string[];
 
   return (
@@ -79,7 +76,7 @@ function KartSelection() {
               <Button
                 key={vehicle}
                 buttonText={getRegionalVariant(vehicle)}
-                onClick={() => onKartSelectFn(character, vehicle)}
+                onClick={() => onKartSelectFn(characterDetail, vehicle)}
               />
             );
           })}
@@ -88,11 +85,5 @@ function KartSelection() {
     </div>
   );
 }
-
-const styles = {
-  regionSwitch: {
-    textDecoration: 'none',
-  },
-};
 
 export default KartSelection;

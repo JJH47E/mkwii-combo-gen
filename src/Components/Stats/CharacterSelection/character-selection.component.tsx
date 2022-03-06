@@ -4,6 +4,7 @@ import Button from '../../Shared/button.component';
 import CharacterDetail from '../../../Models/character-detail.model';
 import CharacterData from '../../../data/character-class.json';
 import '../../../Root.scss';
+import { globalSetCharacter } from '../../../Services/character-selection.service';
 
 const characterData = CharacterData as CharacterDetail[];
 
@@ -12,8 +13,8 @@ function CharacterSelection() {
 
   function onCharacterSelectFn(character: CharacterDetail) {
     window.scrollTo(0, 0);
+    globalSetCharacter(character.name);
     navigate('/mkwii-combo-gen/stats/vehicle', {
-      state: { character },
       replace: false,
     });
   }

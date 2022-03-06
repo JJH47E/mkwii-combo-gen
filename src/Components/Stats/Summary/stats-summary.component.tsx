@@ -1,14 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import KartStats from '../../../Models/kart-stats.model';
 import CharacterStats from '../../../Models/character-stats.model';
-import SummaryLocationState from '../../../Models/summary-location-state.model';
 import { getVehicleStats } from '../../../Services/vehicle-stats.service';
 import Button from '../../Shared/button.component';
 import Stat from '../../Shared/Stat/stat.component';
 import { getCharacterStats } from '../../../Services/chartacter-stats.service';
 import '../../../Root.scss';
 import { getRegionalVariant } from '../../../Services/vehicle-mapper.service';
+import { globalGetCharacter } from '../../../Services/character-selection.service';
+import { globalGetKart } from '../../../Services/kart-selection.service';
 
 function StatsSummary() {
   const navigate = useNavigate();
@@ -17,10 +18,10 @@ function StatsSummary() {
     navigate('/mkwii-combo-gen/', { replace: false });
   };
 
-  const { state } = useLocation();
-  const currentState = state as SummaryLocationState;
+  const character = globalGetCharacter();
+  const kart = globalGetKart();
 
-  if (!currentState) {
+  if (!character || !kart) {
     return (
       <div className="component">
         <header className="component-header">
@@ -34,7 +35,7 @@ function StatsSummary() {
     );
   }
 
-  const { selectedCombo } = currentState;
+  const selectedCombo = { name: character, kart };
   let { stats } = getVehicleStats(selectedCombo.kart);
 
   // add on character stats

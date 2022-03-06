@@ -10,6 +10,8 @@ import Kart from './Kart/kart.component';
 import GeneratorProps from '../../Models/Props/generator.props';
 import CharacterDetail from '../../Models/character-detail.model';
 import VehicleClass from '../../Models/vehicle-class.model';
+import { globalSetCharacter } from '../../Services/character-selection.service';
+import { globalSetKart } from '../../Services/kart-selection.service';
 
 let isCharacterConfirmed: boolean;
 
@@ -40,13 +42,9 @@ function Generator({ playerCount }: GeneratorProps) {
   };
 
   const confirmedKart = () => {
-    const selectedCombo = {
-      name: newSelectedCharacter.name,
-      kart: newSelectedKart,
-    };
-    navigate('/mkwii-combo-gen/generate/summary', {
-      state: { selectedCombo },
-    });
+    globalSetCharacter(newSelectedCharacter.name);
+    globalSetKart(newSelectedKart);
+    navigate('/mkwii-combo-gen/generate/summary');
   };
 
   return (

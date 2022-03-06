@@ -1,9 +1,10 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import SummaryLocationState from '../../Models/summary-location-state.model';
+import { useNavigate } from 'react-router-dom';
 import { getRegionalVariant } from '../../Services/vehicle-mapper.service';
 import Button from '../Shared/button.component';
 import '../../Root.scss';
+import { globalGetCharacter } from '../../Services/character-selection.service';
+import { globalGetKart } from '../../Services/kart-selection.service';
 
 function Summary() {
   const navigate = useNavigate();
@@ -13,16 +14,15 @@ function Summary() {
   };
 
   const statsPage = () => {
-    navigate('/mkwii-combo-gen/stats/summary', {
-      state: { selectedCombo },
+    navigate('/mkwii-combo-gen/generate/summary/stats', {
       replace: false,
     });
   };
 
-  const { state } = useLocation();
-  const currentState = state as SummaryLocationState;
+  const character = globalGetCharacter();
+  const kart = globalGetKart();
 
-  if (!currentState) {
+  if (!character || !kart) {
     return (
       <div className="component">
         <header className="component-header">
@@ -36,7 +36,7 @@ function Summary() {
     );
   }
 
-  let { selectedCombo } = currentState;
+  const selectedCombo = { name: character, kart };
 
   return (
     <div className="component">
