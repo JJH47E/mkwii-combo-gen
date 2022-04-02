@@ -1,6 +1,6 @@
 import React from 'react';
+import NavbarHeaderProps from '../../../Models/Props/navbar-header.props';
 import '../../../Root.scss';
-import NavbarHeaderProps from '../../../Models/Props/navrbar-header.props';
 
 function NavBarHeader({ title }: NavbarHeaderProps) {
   return <p className="navbar-title">{title}</p>;

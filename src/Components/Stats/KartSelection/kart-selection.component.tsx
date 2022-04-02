@@ -9,6 +9,7 @@ import RegionSwitch from '../../Shared/region-switch.component';
 import { globalGetCharacter } from '../../../Services/character-selection.service';
 import { getCharacterClass } from '../../../Services/chartacter-stats.service';
 import { globalSetKart } from '../../../Services/kart-selection.service';
+import Item from '../../Shared/List/item.component';
 
 const vehicleData = VehicleData as VehicleClass[];
 
@@ -56,10 +57,11 @@ function KartSelection() {
         <div className="page-content">
           {karts.map((vehicle: string) => {
             return (
-              <Button
+              <Item
                 key={vehicle}
-                buttonText={getRegionalVariant(vehicle)}
-                onClick={() => onKartSelectFn(vehicle)}
+                cookieKey="vehicles"
+                value={getRegionalVariant(vehicle)}
+                onContinue={() => onKartSelectFn(vehicle)}
               />
             );
           })}

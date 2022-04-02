@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../Shared/button.component';
 import CharacterDetail from '../../../Models/character-detail.model';
 import CharacterData from '../../../data/character-class.json';
 import '../../../Root.scss';
 import { globalSetCharacter } from '../../../Services/character-selection.service';
+import Item from '../../Shared/List/item.component';
 
 const characterData = CharacterData as CharacterDetail[];
 
@@ -26,10 +26,11 @@ function CharacterSelection() {
         <div className="page-content">
           {characterData.map((character: CharacterDetail) => {
             return (
-              <Button
+              <Item
                 key={character.name}
-                buttonText={character.name}
-                onClick={() => onCharacterSelectFn(character)}
+                cookieKey="characters"
+                value={character.name}
+                onContinue={() => onCharacterSelectFn(character)}
               />
             );
           })}

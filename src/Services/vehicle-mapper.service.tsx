@@ -22,11 +22,9 @@ export function getRegionalVariant(vehicle: string): string {
 }
 
 export function mapToNtsc(palVehicle: string): string {
-  const ntscVehicle = palNtscVehicleMapperData[palVehicle];
-  if (!ntscVehicle) {
-    // vehicle is same in PAL as it is in NTSC
+  if (!Object.keys(palNtscVehicleMapperData).includes(palVehicle)) {
+    // vehicle is same in PAL as it is in NTSC or vehicle is already in NTSC or vehicle doesn't exist
     return palVehicle;
   }
-
-  return ntscVehicle;
+  return palNtscVehicleMapperData[palVehicle];
 }

@@ -5,8 +5,12 @@ import SiteRoutes from './site-routes.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { character } from './Services/character-selection.service';
 import { kart } from './Services/kart-selection.service';
+import { initialize } from './Services/cookie.service';
 
 function App() {
+  // initialise cookie service
+  initialize();
+
   // instantiate Region service
   region();
 
