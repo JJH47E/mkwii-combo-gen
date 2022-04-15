@@ -4,14 +4,25 @@ const cookies = new Cookies();
 const vehicleKey = 'vehicles';
 const charactersKey = 'characters';
 
+const current = new Date();
+const nextYear = new Date();
+
+nextYear.setFullYear(current.getFullYear() + 1);
+
 export function initialize(): void {
   const v = cookies.get(vehicleKey) as string;
   if (!v) {
-    cookies.set(vehicleKey, '', { path: '/' });
+    cookies.set(vehicleKey, '', {
+      path: '/',
+      expires: nextYear,
+    });
   }
   const c = cookies.get(charactersKey) as string;
   if (!c) {
-    cookies.set(charactersKey, '', { path: '/' });
+    cookies.set(charactersKey, '', {
+      path: '/',
+      expires: nextYear,
+    });
   }
 }
 
@@ -34,7 +45,10 @@ export function setFavouriteCharacter(character: string): void {
     return;
   }
 
-  cookies.set(charactersKey, `${setCharacters + character},`, { path: '/' });
+  cookies.set(charactersKey, `${setCharacters + character},`, {
+    path: '/',
+    expires: nextYear,
+  });
 }
 
 export function removeFavouriteVehicle(vehicle: string): void {
@@ -47,7 +61,10 @@ export function removeFavouriteVehicle(vehicle: string): void {
 
   const toSet = vehicles.filter(name => name !== vehicle && name);
 
-  cookies.set(vehicleKey, `${toSet.join(',')},`, { path: '/' });
+  cookies.set(vehicleKey, `${toSet.join(',')},`, {
+    path: '/',
+    expires: nextYear,
+  });
 }
 
 export function removeFavouriteCharacter(character: string): void {
@@ -60,7 +77,10 @@ export function removeFavouriteCharacter(character: string): void {
 
   const toSet = characters.filter(name => name !== character && name);
 
-  cookies.set(charactersKey, `${toSet.join(',')},`, { path: '/' });
+  cookies.set(charactersKey, `${toSet.join(',')},`, {
+    path: '/',
+    expires: nextYear,
+  });
 }
 
 export function isCharacterFavourite(character: string): boolean {
@@ -85,7 +105,10 @@ export function setCookie(route: string, cookieName: string): void {
     return;
   }
 
-  cookies.set(route, `${setCookies + cookieName},`, { path: '/' });
+  cookies.set(route, `${setCookies + cookieName},`, {
+    path: '/',
+    expires: nextYear,
+  });
 }
 
 export function removeCookie(route: string, cookieName: string): void {
@@ -98,7 +121,10 @@ export function removeCookie(route: string, cookieName: string): void {
 
   const toSet = cookie.filter(name => name !== cookieName && name);
 
-  cookies.set(route, `${toSet.join(',')},`, { path: '/' });
+  cookies.set(route, `${toSet.join(',')},`, {
+    path: '/',
+    expires: nextYear,
+  });
 }
 
 export function isCookieSet(route: string, cookieName: string): boolean {

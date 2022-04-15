@@ -1,0 +1,74 @@
+[
+	{
+		"cup": "Mushroom",
+		"tracks": [
+			"Luigi Circuit",
+			"Moo Moo Meadows",
+			"Mushroom Gorge",
+			"Toad's Factory"
+		]
+	},
+	{
+		"cup": "Flower",
+		"tracks": [
+			"Mario Circuit",
+			"Coconut Mall",
+			"DK Summit",
+			"Wario's Gold Mine"
+		]
+	},
+	{
+		"cup": "Star",
+		"tracks": [
+			"Daisy Circuit",
+			"Koopa Cape",
+			"Maple Treeway",
+			"Grumble Volcano"
+		]
+	},
+	{
+		"cup": "Special",
+		"tracks": [
+			"Dry Dry Ruins",
+			"Moonview Highway",
+			"Bowser's Castle",
+			"Rainbow Road"
+		]
+	},
+	{
+		"cup": "Shell",
+		"tracks": [
+			"GCN Peach Beach",
+			"DS Yoshi Falls",
+			"SNES Ghost Valley 2",
+			"N64 Mario Raceway"
+		]
+	},
+	{
+		"cup": "Banana",
+		"tracks": [
+			"N64 Sherbet Land",
+			"GBA Shy Guy Beach",
+			"DS Delfino Square",
+			"GCN Waluigi Stadium"
+		]
+	},
+	{
+		"cup": "Leaf",
+		"tracks": [
+			"DS Desert Hills",
+			"GBA Bowser Castle 3",
+			"N64 DK's Jungle Parkway",
+			"GCN Mario Circuit"
+		]
+	},
+	{
+		"cup": "Lightning",
+		"tracks": [
+			"SNES Mario Circuit 3",
+			"DS Peach Gardens",
+			"GCN DK Mountain",
+			"N64 Bowser's Castle"
+		]
+	}
+]

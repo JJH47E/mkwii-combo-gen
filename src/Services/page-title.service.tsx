@@ -18,6 +18,8 @@ export function getPageTitle(url: string): string {
       return 'Summary';
     case `${siteRoot}/generate/summary/stats`:
       return 'Stats';
+    case `${siteRoot}/track`:
+      return 'Tracks';
     default:
       return '404';
   }

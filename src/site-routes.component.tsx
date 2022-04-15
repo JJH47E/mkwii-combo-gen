@@ -9,6 +9,7 @@ import Summary from './Components/Summary/summary.component';
 import { region } from './Services/region.service';
 import CharacterSelection from './Components/Stats/CharacterSelection/character-selection.component';
 import KartSelection from './Components/Stats/KartSelection/kart-selection.component';
+import Track from './Components/Track/track.component';
 
 function SiteRoutes() {
   // instantiate Region service
@@ -36,6 +37,7 @@ function SiteRoutes() {
           path="/mkwii-combo-gen/stats/summary"
           element={<StatsSummary />}
         />
+        <Route path="/mkwii-combo-gen/track" element={<Track />} />
       </Route>
     </Routes>
   );

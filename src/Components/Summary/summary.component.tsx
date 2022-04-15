@@ -26,7 +26,7 @@ function Summary() {
     return (
       <div className="component">
         <header className="component-header">
-          <h2>Uh Oh..</h2>
+          <h2 className="main">Uh Oh..</h2>
           <p>Something has gone wrong</p>
           <div className="page-content">
             <Button onClick={homePage} buttonText="Take me home" />
@@ -41,8 +41,9 @@ function Summary() {
   return (
     <div className="component">
       <header className="component-header">
-        <h2 className="name">{selectedCombo.name}</h2>
-        <h3 className="kart">{getRegionalVariant(selectedCombo.kart)}</h3>
+        <h2 className="name main">{selectedCombo.name}</h2>
+        <h4 className="kart">{getRegionalVariant(selectedCombo.kart)}</h4>
+        <div style={{ paddingBottom: '15px' }} />
         <div className="page-content">
           <Button onClick={statsPage} buttonText="View Stats" />
           <Button onClick={homePage} buttonText="Do Another" />
