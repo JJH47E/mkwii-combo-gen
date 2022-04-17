@@ -1,7 +1,7 @@
 import React from 'react';
+import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { getRegionalVariant } from '../../Services/vehicle-mapper.service';
-import Button from '../Shared/button.component';
 import '../../Root.scss';
 import { globalGetCharacter } from '../../Services/character-selection.service';
 import { globalGetKart } from '../../Services/kart-selection.service';
@@ -29,7 +29,13 @@ function Summary() {
           <h2 className="main">Uh Oh..</h2>
           <p>Something has gone wrong</p>
           <div className="page-content">
-            <Button onClick={homePage} buttonText="Take me home" />
+            <Button
+              variant="contained"
+              className="full-width"
+              onClick={homePage}
+            >
+              Take me home
+            </Button>
           </div>
         </header>
       </div>
@@ -45,8 +51,17 @@ function Summary() {
         <h4 className="kart">{getRegionalVariant(selectedCombo.kart)}</h4>
         <div style={{ paddingBottom: '15px' }} />
         <div className="page-content">
-          <Button onClick={statsPage} buttonText="View Stats" />
-          <Button onClick={homePage} buttonText="Do Another" />
+          <Button
+            variant="contained"
+            className="full-width"
+            onClick={statsPage}
+          >
+            View Stats
+          </Button>
+          <div style={{ paddingBottom: '15px' }} />
+          <Button variant="contained" className="full-width" onClick={homePage}>
+            Do Another
+          </Button>
         </div>
       </header>
     </div>

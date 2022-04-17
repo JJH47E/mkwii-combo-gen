@@ -1,8 +1,10 @@
 import Cookies from 'universal-cookie';
+import CounterObject from '../Models/counter-object.model';
 
 const cookies = new Cookies();
 const vehicleKey = 'vehicles';
 const charactersKey = 'characters';
+const counterKey = 'counter';
 
 const current = new Date();
 const nextYear = new Date();
@@ -20,6 +22,13 @@ export function initialize(): void {
   const c = cookies.get(charactersKey) as string;
   if (!c) {
     cookies.set(charactersKey, '', {
+      path: '/',
+      expires: nextYear,
+    });
+  }
+  const o = cookies.get(counterKey) as string;
+  if (!o) {
+    cookies.set(counterKey, '[]', {
       path: '/',
       expires: nextYear,
     });
@@ -132,4 +141,86 @@ export function isCookieSet(route: string, cookieName: string): boolean {
   const cookie = setCookies.split(',');
 
   return cookie.includes(cookieName);
+}
+
+export function isOpponentSet(name: string): boolean {
+  const setCookies = cookies.get(counterKey) as CounterObject[];
+  return (
+    setCookies.find(
+      obj => obj.opponentName.toLowerCase() === name.toLowerCase()
+    ) != null
+  );
+}
+
+export function setOpponentCookie(name: string): void {
+  if (isOpponentSet(name)) return;
+
+  const cookieToSet = {
+    opponentName: name,
+    opponentScore: 0,
+    myScore: 0,
+  } as CounterObject;
+
+  const setCookies = cookies.get(counterKey) as CounterObject[];
+  setCookies.push(cookieToSet);
+  cookies.set(counterKey, `${JSON.stringify(setCookies)}`, {
+    path: '/',
+    expires: nextYear,
+  });
+}
+
+export function getCompetitiveInfo(): CounterObject[] {
+  return cookies.get(counterKey) as CounterObject[];
+}
+
+export function updateOpponentScore(
+  opponentName: string,
+  increment: boolean
+): CounterObject {
+  let infos = getCompetitiveInfo();
+
+  const tieToUpdate = infos.find(tie => tie.opponentName === opponentName);
+
+  if (!tieToUpdate) {
+    throw Error('cannot find opponent');
+  }
+
+  tieToUpdate.opponentScore += increment ? 1 : -1;
+
+  infos = infos.map(tie =>
+    tie.opponentName === opponentName ? tieToUpdate : tie
+  );
+
+  cookies.set(counterKey, `${JSON.stringify(infos)}`, {
+    path: '/',
+    expires: nextYear,
+  });
+
+  return tieToUpdate;
+}
+
+export function updateMyScore(
+  opponentName: string,
+  increment: boolean
+): CounterObject {
+  let infos = getCompetitiveInfo();
+
+  const tieToUpdate = infos.find(tie => tie.opponentName === opponentName);
+
+  if (!tieToUpdate) {
+    throw Error('cannot find opponent');
+  }
+
+  tieToUpdate.myScore += increment ? 1 : -1;
+
+  infos = infos.map(tie =>
+    tie.opponentName === opponentName ? tieToUpdate : tie
+  );
+
+  cookies.set(counterKey, `${JSON.stringify(infos)}`, {
+    path: '/',
+    expires: nextYear,
+  });
+
+  return tieToUpdate;
 }

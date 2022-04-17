@@ -20,7 +20,14 @@ export function getPageTitle(url: string): string {
       return 'Stats';
     case `${siteRoot}/track`:
       return 'Tracks';
+    case `${siteRoot}/counter`:
+      return '1v1s';
+    case `${siteRoot}/counter/add`:
+      return 'Add';
     default:
+      if (url.startsWith(`${siteRoot}/counter/`)) {
+        return 'Details';
+      }
       return '404';
   }
 }

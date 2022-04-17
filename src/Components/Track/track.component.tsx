@@ -1,7 +1,7 @@
+import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import { getTrack } from '../../Services/track.service';
 import Name from '../Generator/Shared/name.component';
-import Button from '../Shared/button.component';
 
 function Track() {
   const [newTrack, setTrack] = useState(getTrack());
@@ -19,7 +19,13 @@ function Track() {
           <Name text={newTrack.track} />
           <p>{newTrack.cup} Cup</p>
           <div style={{ paddingBottom: '15px' }} />
-          <Button onClick={setNewTrack} buttonText="Another" />
+          <Button
+            variant="contained"
+            className="full-width"
+            onClick={setNewTrack}
+          >
+            Another
+          </Button>
         </div>
       </header>
     </div>

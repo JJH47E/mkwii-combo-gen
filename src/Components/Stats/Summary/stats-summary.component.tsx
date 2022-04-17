@@ -1,9 +1,9 @@
 import React from 'react';
+import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import KartStats from '../../../Models/kart-stats.model';
 import CharacterStats from '../../../Models/character-stats.model';
 import { getVehicleStats } from '../../../Services/vehicle-stats.service';
-import Button from '../../Shared/button.component';
 import Stat from '../../Shared/Stat/stat.component';
 import { getCharacterStats } from '../../../Services/chartacter-stats.service';
 import '../../../Root.scss';
@@ -28,7 +28,13 @@ function StatsSummary() {
           <h2>Uh Oh..</h2>
           <p>Something has gone wrong</p>
           <div className="page-content">
-            <Button onClick={homePage} buttonText="Take me home" />
+            <Button
+              variant="contained"
+              className="full-width"
+              onClick={homePage}
+            >
+              Take me home
+            </Button>
           </div>
         </header>
       </div>
@@ -59,7 +65,9 @@ function StatsSummary() {
           />
         </div>
         <div className="page-content">
-          <Button onClick={homePage} buttonText="Home" />
+          <Button variant="contained" className="full-width" onClick={homePage}>
+            Home
+          </Button>
         </div>
       </header>
     </div>

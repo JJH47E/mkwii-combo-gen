@@ -1,6 +1,5 @@
 import React from 'react';
-import { isMobile } from 'react-device-detect';
-import Button from '../../Shared/button.component';
+import { Button } from '@mui/material';
 import Name from '../Shared/name.component';
 import CharacterProps from '../../../Models/Props/character.props';
 import '../../../Root.scss';
@@ -10,9 +9,17 @@ function Character({ text, reroll, confirmedChoice }: CharacterProps) {
     <div className="page-content">
       <Name text={text} />
       <div style={{ paddingBottom: '15px' }} />
-      <Button onClick={reroll} buttonText="Reroll" />
-      <br />
-      <Button onClick={confirmedChoice} buttonText="Confirm" />
+      <Button variant="contained" className="full-width" onClick={reroll}>
+        Reroll
+      </Button>
+      <div style={{ paddingBottom: '15px' }} />
+      <Button
+        variant="contained"
+        className="full-width"
+        onClick={confirmedChoice}
+      >
+        Confirm
+      </Button>
     </div>
   );
 }

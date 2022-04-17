@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../Shared/button.component';
+import { Button } from '@mui/material';
 import VehicleClass from '../../../Models/vehicle-class.model';
 import VehicleData from '../../../data/class-vehicles.json';
 import '../../../Root.scss';
@@ -37,7 +37,13 @@ function KartSelection() {
           <h2>Uh Oh..</h2>
           <p>Something has gone wrong</p>
           <div className="page-content">
-            <Button onClick={homePage} buttonText="Take me home" />
+            <Button
+              variant="contained"
+              className="full-width"
+              onClick={homePage}
+            >
+              Take me home
+            </Button>
           </div>
         </header>
       </div>

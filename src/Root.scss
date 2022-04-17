@@ -11,6 +11,10 @@ h2.main {
   background-color: #282c34;
 }
 
+.full-width {
+  width: 100%;
+}
+
 .navbar {
   @include media("<=phone") {
     min-height: $mobileNavbarHeight;
@@ -185,4 +189,14 @@ button.favourite {
 .continue-button {
   color: rgba(255, 255, 255, 0.5);
   display: inline;
+}
+
+.score-box {
+  width: 50%;
+  display: inline-block;
+}
+
+.third-width {
+  width: calc(100/3);
+  display: inline-block;
 }

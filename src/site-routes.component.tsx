@@ -1,6 +1,5 @@
-import React, { Routes, Route, useLocation } from 'react-router-dom';
+import React, { Routes, Route } from 'react-router-dom';
 import './Root.scss';
-import { useEffect } from 'react';
 import Generator from './Components/Generator/generator.component';
 import Home from './Components/Home/home.component';
 import Layout from './Components/Layout/layout.component';
@@ -10,6 +9,9 @@ import { region } from './Services/region.service';
 import CharacterSelection from './Components/Stats/CharacterSelection/character-selection.component';
 import KartSelection from './Components/Stats/KartSelection/kart-selection.component';
 import Track from './Components/Track/track.component';
+import AddOpponent from './Components/Counter/Add/add-opponent.component';
+import OpponentCounterList from './Components/Counter/counter-list.component';
+import TieSummary from './Components/Counter/TieSummary/tie-summary.component';
 
 function SiteRoutes() {
   // instantiate Region service
@@ -38,6 +40,15 @@ function SiteRoutes() {
           element={<StatsSummary />}
         />
         <Route path="/mkwii-combo-gen/track" element={<Track />} />
+        <Route
+          path="/mkwii-combo-gen/counter"
+          element={<OpponentCounterList />}
+        />
+        <Route path="/mkwii-combo-gen/counter/add" element={<AddOpponent />} />
+        <Route
+          path="/mkwii-combo-gen/counter/:opponentName"
+          element={<TieSummary />}
+        />
       </Route>
     </Routes>
   );
