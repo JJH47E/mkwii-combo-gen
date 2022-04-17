@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
+import { Button } from '@mui/material';
 import CounterObject from '../../../Models/counter-object.model';
 import {
   getCompetitiveInfo,
@@ -8,11 +9,14 @@ import {
 } from '../../../Services/cookie.service';
 import '../../../Root.scss';
 import Score from './score.component';
+import ErrorPage from '../../Error/error-page.component';
 
 function TieSummary() {
+  const navigate = useNavigate();
+
   const { opponentName } = useParams() as unknown as CounterObject;
   if (!opponentName) {
-    throw Error();
+    return <ErrorPage />;
   }
 
   const tieDetails = getCompetitiveInfo().find(
@@ -20,7 +24,7 @@ function TieSummary() {
   );
 
   if (!tieDetails) {
-    throw Error;
+    return <ErrorPage />;
   }
 
   const [myScore, setMyScore] = useState(tieDetails.myScore);
@@ -46,6 +50,12 @@ function TieSummary() {
     setOpponentScore(opponentScore - 1);
   };
 
+  const toEdit = () => {
+    navigate(`/mkwii-combo-gen/counter/${tieDetails.opponentName}/edit`, {
+      replace: false,
+    });
+  };
+
   return (
     <div className="component">
       <header className="component-header">
@@ -64,6 +74,11 @@ function TieSummary() {
               decrementFunc={decrementOpponentScore}
               incrementFunc={incrementOpponentScore}
             />
+          </div>
+          <div style={{ display: 'block', paddingTop: '45px' }}>
+            <Button variant="contained" onClick={toEdit}>
+              Edit
+            </Button>
           </div>
         </div>
       </header>

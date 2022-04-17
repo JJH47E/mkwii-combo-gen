@@ -10,6 +10,7 @@ import '../../../Root.scss';
 import { getRegionalVariant } from '../../../Services/vehicle-mapper.service';
 import { globalGetCharacter } from '../../../Services/character-selection.service';
 import { globalGetKart } from '../../../Services/kart-selection.service';
+import ErrorPage from '../../Error/error-page.component';
 
 function StatsSummary() {
   const navigate = useNavigate();
@@ -22,23 +23,7 @@ function StatsSummary() {
   const kart = globalGetKart();
 
   if (!character || !kart) {
-    return (
-      <div className="component">
-        <header className="component-header">
-          <h2>Uh Oh..</h2>
-          <p>Something has gone wrong</p>
-          <div className="page-content">
-            <Button
-              variant="contained"
-              className="full-width"
-              onClick={homePage}
-            >
-              Take me home
-            </Button>
-          </div>
-        </header>
-      </div>
-    );
+    return <ErrorPage />;
   }
 
   const selectedCombo = { name: character, kart };

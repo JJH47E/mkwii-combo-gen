@@ -33,53 +33,55 @@ function OpponentCounterList() {
         <div className="page-content">
           <h2 className="title">1v1s</h2>
           <div style={{ paddingBottom: '15px' }} />
-          {competitiveInfo.map(info => {
-            return (
-              <Button
-                variant="text"
-                key={`button-${info.opponentName}`}
-                className="full-width"
-                color="inherit"
-                onClick={() => goToUser(info)}
-              >
-                <div
-                  key={`div-main-${info.opponentName}`}
-                  style={{ display: 'block', width: '100%' }}
-                  role="button"
-                  tabIndex={getTabIndex()}
-                >
-                  <div
-                    key={`div-me-${info.opponentName}`}
-                    style={{
-                      display: 'inline-block',
-                      width: '50%',
-                      height: '100%',
-                    }}
+          {competitiveInfo.length === 0
+            ? "Looks like you haven't added anyone yet..."
+            : competitiveInfo.map(info => {
+                return (
+                  <Button
+                    variant="text"
+                    key={`button-${info.opponentName}`}
+                    className="full-width"
+                    color="inherit"
+                    onClick={() => goToUser(info)}
                   >
-                    <CounterItem
-                      key={`item-me-${info.opponentName}`}
-                      name="Me"
-                      score={info.myScore}
-                    />
-                  </div>
-                  <div
-                    key={`div-them-${info.opponentName}`}
-                    style={{
-                      display: 'inline-block',
-                      width: '50%',
-                      height: '100%',
-                    }}
-                  >
-                    <CounterItem
-                      key={`item-them-${info.opponentName}`}
-                      name={info.opponentName}
-                      score={info.opponentScore}
-                    />
-                  </div>
-                </div>
-              </Button>
-            );
-          })}
+                    <div
+                      key={`div-main-${info.opponentName}`}
+                      style={{ display: 'block', width: '100%' }}
+                      role="button"
+                      tabIndex={getTabIndex()}
+                    >
+                      <div
+                        key={`div-me-${info.opponentName}`}
+                        style={{
+                          display: 'inline-block',
+                          width: '50%',
+                          height: '100%',
+                        }}
+                      >
+                        <CounterItem
+                          key={`item-me-${info.opponentName}`}
+                          name="Me"
+                          score={info.myScore}
+                        />
+                      </div>
+                      <div
+                        key={`div-them-${info.opponentName}`}
+                        style={{
+                          display: 'inline-block',
+                          width: '50%',
+                          height: '100%',
+                        }}
+                      >
+                        <CounterItem
+                          key={`item-them-${info.opponentName}`}
+                          name={info.opponentName}
+                          score={info.opponentScore}
+                        />
+                      </div>
+                    </div>
+                  </Button>
+                );
+              })}
           <div style={{ paddingBottom: '15px' }} />
           <div>
             <Button

@@ -10,6 +10,7 @@ import { globalGetCharacter } from '../../../Services/character-selection.servic
 import { getCharacterClass } from '../../../Services/chartacter-stats.service';
 import { globalSetKart } from '../../../Services/kart-selection.service';
 import Item from '../../Shared/List/item.component';
+import ErrorPage from '../../Error/error-page.component';
 
 const vehicleData = VehicleData as VehicleClass[];
 
@@ -31,23 +32,7 @@ function KartSelection() {
   const character = globalGetCharacter();
 
   if (!character) {
-    return (
-      <div className="component">
-        <header className="component-header">
-          <h2>Uh Oh..</h2>
-          <p>Something has gone wrong</p>
-          <div className="page-content">
-            <Button
-              variant="contained"
-              className="full-width"
-              onClick={homePage}
-            >
-              Take me home
-            </Button>
-          </div>
-        </header>
-      </div>
-    );
+    return <ErrorPage />;
   }
 
   const characterClass = getCharacterClass(character);

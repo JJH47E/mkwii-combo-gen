@@ -12,6 +12,7 @@ import Track from './Components/Track/track.component';
 import AddOpponent from './Components/Counter/Add/add-opponent.component';
 import OpponentCounterList from './Components/Counter/counter-list.component';
 import TieSummary from './Components/Counter/TieSummary/tie-summary.component';
+import EditTie from './Components/Counter/Edit/edit-tie.component';
 
 function SiteRoutes() {
   // instantiate Region service
@@ -48,6 +49,10 @@ function SiteRoutes() {
         <Route
           path="/mkwii-combo-gen/counter/:opponentName"
           element={<TieSummary />}
+        />
+        <Route
+          path="/mkwii-combo-gen/counter/:opponentName/edit"
+          element={<EditTie />}
         />
       </Route>
     </Routes>

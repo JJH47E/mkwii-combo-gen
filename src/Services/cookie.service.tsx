@@ -224,3 +224,30 @@ export function updateMyScore(
 
   return tieToUpdate;
 }
+
+export function updateTie(oldName: string, tie: CounterObject): void {
+  let infos = getCompetitiveInfo();
+
+  infos = infos.map(t => (t.opponentName === oldName ? tie : t));
+
+  cookies.set(counterKey, `${JSON.stringify(infos)}`, {
+    path: '/',
+    expires: nextYear,
+  });
+}
+
+export function deleteTie(opponentName: string): boolean {
+  const infos = getCompetitiveInfo();
+
+  const newInfos = infos.filter(x => x.opponentName !== opponentName);
+
+  if (infos.length === newInfos.length) {
+    return false;
+  }
+  cookies.set(counterKey, `${JSON.stringify(newInfos)}`, {
+    path: '/',
+    expires: nextYear,
+  });
+
+  return true;
+}
