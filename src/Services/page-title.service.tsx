@@ -24,6 +24,8 @@ export function getPageTitle(url: string): string {
       return '1v1s';
     case `${siteRoot}/counter/add`:
       return 'Add';
+    case `${siteRoot}/challenge`:
+      return 'Challenge';
     default:
       if (url.startsWith(`${siteRoot}/counter/`)) {
         return 'Details';

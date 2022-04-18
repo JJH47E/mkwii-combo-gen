@@ -27,6 +27,10 @@ function Home() {
     navigate('/mkwii-combo-gen/counter', { replace: false });
   };
 
+  const onClickChallenge = () => {
+    navigate('/mkwii-combo-gen/challenge', { replace: false });
+  };
+
   return (
     <div className="component">
       <header className="component-header">
@@ -62,6 +66,14 @@ function Home() {
             onClick={onClickCounter}
           >
             1v1 Counter
+          </Button>
+          <div style={{ paddingBottom: '15px' }} />
+          <Button
+            variant="contained"
+            className="full-width"
+            onClick={onClickChallenge}
+          >
+            Challenge
           </Button>
           <div style={{ paddingBottom: '15px' }} />
           <GitHubButton
