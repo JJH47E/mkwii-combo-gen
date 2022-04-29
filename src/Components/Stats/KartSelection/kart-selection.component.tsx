@@ -1,43 +1,38 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { useNavigate, useParams } from 'react-router-dom';
 import VehicleClass from '../../../Models/vehicle-class.model';
 import VehicleData from '../../../data/class-vehicles.json';
 import '../../../Root.scss';
 import { getRegionalVariant } from '../../../Services/vehicle-mapper.service';
 import RegionSwitch from '../../Shared/region-switch.component';
-import { globalGetCharacter } from '../../../Services/character-selection.service';
-import { getCharacterClass } from '../../../Services/chartacter-stats.service';
-import { globalSetKart } from '../../../Services/kart-selection.service';
 import Item from '../../Shared/List/item.component';
 import ErrorPage from '../../Error/error-page.component';
+import GeneratorParams from '../../../Models/Params/generator.param';
+import { getCharacter } from '../../../Services/character.service';
 
 const vehicleData = VehicleData as VehicleClass[];
 
 function KartSelection() {
-  const navigate = useNavigate();
-
-  const homePage = () => {
-    navigate('/mkwii-combo-gen/', { replace: false });
-  };
-
-  function onKartSelectFn(kart: string) {
-    globalSetKart(kart);
-    window.scrollTo(0, 0);
-    navigate('/mkwii-combo-gen/stats/summary', {
-      replace: false,
-    });
+  const { characterName, vehicleName } =
+    useParams() as unknown as GeneratorParams;
+  if (!characterName) {
+    return <ErrorPage />;
   }
 
-  const character = globalGetCharacter();
+  const character = getCharacter(characterName);
 
   if (!character) {
     return <ErrorPage />;
   }
 
-  const characterClass = getCharacterClass(character);
+  const navigate = useNavigate();
 
-  const karts = vehicleData.find(v => v.class === characterClass)
+  function onKartSelectFn(vehicle: string) {
+    window.scrollTo(0, 0);
+    navigate(`/mkwii-combo-gen/stats/${character.name}/${vehicle}/stats`);
+  }
+
+  const karts = vehicleData.find(v => v.class === character.class)
     ?.vehicles as string[];
 
   return (

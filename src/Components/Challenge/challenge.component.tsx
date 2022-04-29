@@ -2,12 +2,12 @@ import React from 'react';
 import Button from '@mui/material/Button/Button';
 import '../../Root.scss';
 import TrackModel from '../../Models/track.model';
-import { getCharacter } from '../../Services/character.service';
+import { getRandomCharacter } from '../../Services/character.service';
 import { getTrack } from '../../Services/track.service';
 import { getVehicle } from '../../Services/vehicle.service';
 
 function Challenge() {
-  const character = getCharacter();
+  const character = getRandomCharacter('');
   const vehicle = getVehicle(character.class);
 
   const tracks: TrackModel[] = [];

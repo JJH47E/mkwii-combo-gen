@@ -1,22 +1,44 @@
+import CharacterDataJson from '../data/character-class.json';
+import CharacterDetail from '../Models/character-detail.model';
+import VehicleDataJson from '../data/class-vehicles.json';
+import VehicleClass from '../Models/vehicle-class.model';
+
+const vehicleData = VehicleDataJson as VehicleClass[];
+const characterData = CharacterDataJson as CharacterDetail[];
+
+const characters = characterData.map(x => x.name.replaceAll(' ', '%20'));
+const vehicles = vehicleData
+  .map(x => x.vehicles)
+  .flat()
+  .map(x => x.replaceAll(' ', '%20'));
+
 export function getPageTitle(url: string): string {
   const siteRoot = '/mkwii-combo-gen';
+
+  if (characters.some(x => url.endsWith(x))) {
+    if (url.includes('stat')) {
+      return 'Stats';
+    }
+    return 'Generator';
+  }
+
+  if (vehicles.some(x => url.endsWith(x))) {
+    if (url.includes('stat')) {
+      return 'Stats';
+    }
+    return 'Generator';
+  }
+
+  if (url.endsWith('stats')) {
+    return 'Stats';
+  }
 
   switch (url) {
     case siteRoot:
       return 'Home';
     case `${siteRoot}/`:
       return 'Home';
-    case `${siteRoot}/generate`:
-      return 'Generator';
-    case `${siteRoot}/generate/summary`:
-      return 'Summary';
     case `${siteRoot}/stats`:
-      return 'Stats';
-    case `${siteRoot}/stats/vehicle`:
-      return 'Stats';
-    case `${siteRoot}/stats/summary`:
-      return 'Summary';
-    case `${siteRoot}/generate/summary/stats`:
       return 'Stats';
     case `${siteRoot}/track`:
       return 'Tracks';

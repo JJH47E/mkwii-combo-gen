@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
+import { useParams } from 'react-router-dom';
+import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
 import KartStats from '../../../Models/kart-stats.model';
 import CharacterStats from '../../../Models/character-stats.model';
 import { getVehicleStats } from '../../../Services/vehicle-stats.service';
@@ -7,10 +9,8 @@ import Stat from '../../Shared/Stat/stat.component';
 import { getCharacterStats } from '../../../Services/chartacter-stats.service';
 import '../../../Root.scss';
 import { getRegionalVariant } from '../../../Services/vehicle-mapper.service';
-import { globalGetCharacter } from '../../../Services/character-selection.service';
-import { globalGetKart } from '../../../Services/kart-selection.service';
 import ErrorPage from '../../Error/error-page.component';
-import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
+import GeneratorParams from '../../../Models/Params/generator.param';
 
 function formatShareString(statName: string, stats: KartStats): string {
   let stat: number;
@@ -54,15 +54,14 @@ function getBoxColor(stat: number): string {
 }
 
 function StatsSummary() {
-  const character = globalGetCharacter();
-  const kart = globalGetKart();
-
-  if (!character || !kart) {
+  const { characterName, vehicleName } =
+    useParams() as unknown as GeneratorParams;
+  if (!characterName || !vehicleName) {
     return <ErrorPage />;
   }
 
-  const selectedCombo = { name: character, kart };
-  let { stats } = getVehicleStats(selectedCombo.kart);
+  const selectedCombo = { name: characterName, vehicle: vehicleName };
+  let { stats } = getVehicleStats(selectedCombo.vehicle);
 
   // add on character stats
   stats = sumStats(stats, getCharacterStats(selectedCombo.name));
@@ -77,12 +76,10 @@ function StatsSummary() {
       const statTextString = statText.join('\n');
       navigator
         .share({
-          title: 'MKWii Challenge',
-          text: `${selectedCombo.name} - ${selectedCombo.kart}\n${statTextString}`,
-          url: 'https://jjh47e.github.io/mkwii-combo-gen',
+          title: 'MKWii Stats',
+          text: `${selectedCombo.name} - ${selectedCombo.vehicle}\n${statTextString}`,
+          url: `https://jjh47e.github.io/mkwii-combo-gen/${selectedCombo.name}/${selectedCombo.vehicle}/stats`,
         })
-        // eslint-disable-next-line no-console
-        .then(() => console.log(statTextString))
         .catch((error: string) => {
           throw new Error(error);
         });
@@ -93,7 +90,7 @@ function StatsSummary() {
     <div className="component">
       <header className="component-header">
         <h2 className="name">{selectedCombo.name}</h2>
-        <h3 className="kart">{getRegionalVariant(selectedCombo.kart)}</h3>
+        <h3 className="kart">{getRegionalVariant(selectedCombo.vehicle)}</h3>
         <div className="stat-summary-content">
           <Stat
             driftType={stats.driftType}

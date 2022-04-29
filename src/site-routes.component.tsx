@@ -1,10 +1,8 @@
 import React, { Routes, Route } from 'react-router-dom';
 import './Root.scss';
-import Generator from './Components/Generator/generator.component';
 import Home from './Components/Home/home.component';
 import Layout from './Components/Layout/layout.component';
 import StatsSummary from './Components/Stats/Summary/stats-summary.component';
-import Summary from './Components/Summary/summary.component';
 import { region } from './Services/region.service';
 import CharacterSelection from './Components/Stats/CharacterSelection/character-selection.component';
 import KartSelection from './Components/Stats/KartSelection/kart-selection.component';
@@ -14,6 +12,8 @@ import OpponentCounterList from './Components/Counter/counter-list.component';
 import TieSummary from './Components/Counter/TieSummary/tie-summary.component';
 import EditTie from './Components/Counter/Edit/edit-tie.component';
 import Challenge from './Components/Challenge/challenge.component';
+import CharacterGenerator from './Components/CharacterGenerator/character-generator.component';
+import VehicleGenerator from './Components/VehicleGenerator/vehicle-generator.component';
 
 function SiteRoutes() {
   // instantiate Region service
@@ -24,21 +24,24 @@ function SiteRoutes() {
       <Route path="/mkwii-combo-gen/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route
-          path="/mkwii-combo-gen/generate"
-          element={<Generator playerCount={1} />}
+          path="/mkwii-combo-gen/:characterName"
+          element={<CharacterGenerator />}
         />
-        <Route path="/mkwii-combo-gen/generate/summary" element={<Summary />} />
         <Route
-          path="/mkwii-combo-gen/generate/summary/stats"
+          path="/mkwii-combo-gen/:characterName/:vehicleName"
+          element={<VehicleGenerator />}
+        />
+        <Route
+          path="/mkwii-combo-gen/:characterName/:vehicleName/stats"
           element={<StatsSummary />}
         />
         <Route path="/mkwii-combo-gen/stats" element={<CharacterSelection />} />
         <Route
-          path="/mkwii-combo-gen/stats/vehicle"
+          path="/mkwii-combo-gen/stats/:characterName"
           element={<KartSelection />}
         />
         <Route
-          path="/mkwii-combo-gen/stats/summary"
+          path="/mkwii-combo-gen/stats/:characterName/:vehicleName/stats"
           element={<StatsSummary />}
         />
         <Route path="/mkwii-combo-gen/track" element={<Track />} />
