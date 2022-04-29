@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import GitHubButton from 'react-github-btn';
 import { useNavigate } from 'react-router-dom';
 import '../../Root.scss';
+import { getRandomCharacter } from '../../Services/character.service';
 
 function Home() {
   useEffect(() => {
@@ -12,11 +13,11 @@ function Home() {
   const navigate = useNavigate();
 
   const onClickGen = () => {
-    navigate('/mkwii-combo-gen/generate', { replace: false });
+    navigate(`/mkwii-combo-gen/${getRandomCharacter('').name}`);
   };
 
   const onClickTrack = () => {
-    navigate('/mkwii-combo-gen/track', { replace: false });
+    navigate('/mkwii-combo-gen/track');
   };
 
   const onClickStats = () => {

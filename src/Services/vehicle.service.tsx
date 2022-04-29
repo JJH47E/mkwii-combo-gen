@@ -1,5 +1,4 @@
 import VehicleDataJson from '../data/class-vehicles.json';
-import CharacterDetail from '../Models/character-detail.model';
 import VehicleClass from '../Models/vehicle-class.model';
 import { getRandomInt } from '../Utils/RandomNumberGenerator';
 
@@ -12,4 +11,14 @@ export function getVehicle(vehicleClass: string): string {
   }
 
   return vehicles[getRandomInt(vehicles.length)];
+}
+
+export function getDistinctVehicle(
+  vehicleClass: string,
+  vehicleName: string
+): string {
+  const vehicle = getVehicle(vehicleClass);
+  return vehicle === vehicleName
+    ? getDistinctVehicle(vehicleClass, vehicleName)
+    : vehicle;
 }
