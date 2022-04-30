@@ -1,5 +1,4 @@
 /* eslint-disable react/button-has-type */
-/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';

@@ -39,7 +39,7 @@ function QuizQuestion() {
 
   const newQuestion = () => {
     setSelected(false);
-    setOptionA(getRandomCombo);
+    setOptionA(getRandomCombo());
     setOptionB(getDistinctRandomCombo(optionA));
     setStat(getRandomStat);
   };
@@ -58,7 +58,6 @@ function QuizQuestion() {
   };
 
   const optionSelected = (option: { name: string; vehicle: string }) => {
-    setSelected(true);
     const otherStat =
       option === optionA
         ? getStat(
@@ -82,6 +81,7 @@ function QuizQuestion() {
       ),
       stat
     );
+    setSelected(true);
     if (chosenStat >= otherStat) {
       // correct!
       setScore(score + 1);
@@ -117,6 +117,10 @@ function QuizQuestion() {
               selectOption={() => optionSelected(optionA)}
               selected={selected}
               stat={stat}
+              stats={sumStats(
+                getVehicleStats(optionA.vehicle).stats,
+                getCharacterStats(optionA.name)
+              )}
             />
           </div>
           <div style={{ width: '50%', display: 'inline-block' }}>
@@ -125,6 +129,10 @@ function QuizQuestion() {
               selectOption={() => optionSelected(optionB)}
               selected={selected}
               stat={stat}
+              stats={sumStats(
+                getVehicleStats(optionB.vehicle).stats,
+                getCharacterStats(optionB.name)
+              )}
             />
           </div>
           {selected ? (

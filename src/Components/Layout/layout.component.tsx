@@ -1,11 +1,12 @@
-import React from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 import BackButton from '../Shared/back-button.component';
 import '../../Root.scss';
 import HomeButton from '../Shared/home-button.component';
 import { getPageTitle } from '../../Services/page-title.service';
 import NavBarHeader from './navbar/nav-bar-header.component';
+import { isCookieConsent } from '../../Services/cookie.service';
 
 function Layout() {
   const location = useLocation();

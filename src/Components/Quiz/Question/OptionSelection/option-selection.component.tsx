@@ -3,28 +3,20 @@ import Button from '@mui/material/Button/Button';
 import OptionSelectionProps from '../../../../Models/Props/option-selection.props.tsx';
 import '../../../../Root.scss';
 import StatGauge from '../../../Shared/Stat/stat-gauge.component';
-import { getCharacterStats } from '../../../../Services/chartacter-stats.service';
-import {
-  getStat,
-  getVehicleStats,
-  sumStats,
-} from '../../../../Services/vehicle-stats.service';
+import { getStat } from '../../../../Services/vehicle-stats.service';
+import { getRegionalVariant } from '../../../../Services/vehicle-mapper.service';
 
 function OptionSelection({
   combo,
   selectOption,
   selected,
   stat,
+  stats,
 }: OptionSelectionProps) {
-  const stats = sumStats(
-    getVehicleStats(combo.vehicle).stats,
-    getCharacterStats(combo.name)
-  );
-
   return (
     <>
       <p>{combo.name}</p>
-      <p>{combo.vehicle}</p>
+      <p>{getRegionalVariant(combo.vehicle)}</p>
       {!selected ? (
         <Button variant="contained" className="width-90" onClick={selectOption}>
           {combo.name}

@@ -6,37 +6,66 @@ const vehicleKey = 'vehicles';
 const charactersKey = 'characters';
 const counterKey = 'counter';
 const quizKey = 'quiz';
+const consentKey = 'cc';
 
 const current = new Date();
 const nextYear = new Date();
 
 nextYear.setFullYear(current.getFullYear() + 1);
 
+export function isCookieConsent(): boolean {
+  const cc = cookies.get(consentKey) as string;
+  if (!cc) {
+    return false;
+  }
+  return true;
+}
+
+export function setCookieConsent(): void {
+  cookies.set(consentKey, 'true', {
+    path: '/',
+    expires: nextYear,
+  });
+}
+
+function setCookieSafe(
+  key: string,
+  value: string,
+  options: { path: string; expires: Date }
+): void {
+  if (isCookieConsent()) {
+    cookies.set(key, value, {
+      path: options.path,
+      expires: options.expires,
+    });
+  }
+}
+
 export function initialize(): void {
   const v = cookies.get(vehicleKey) as string;
   if (!v) {
-    cookies.set(vehicleKey, '', {
+    setCookieSafe(vehicleKey, '', {
       path: '/',
       expires: nextYear,
     });
   }
   const c = cookies.get(charactersKey) as string;
   if (!c) {
-    cookies.set(charactersKey, '', {
+    setCookieSafe(charactersKey, '', {
       path: '/',
       expires: nextYear,
     });
   }
   const o = cookies.get(counterKey) as string;
   if (!o) {
-    cookies.set(counterKey, '[]', {
+    setCookieSafe(counterKey, '[]', {
       path: '/',
       expires: nextYear,
     });
   }
   const q = cookies.get(quizKey) as string;
   if (!q) {
-    cookies.set(quizKey, '0', {
+    setCookieSafe(quizKey, '0', {
       path: '/',
       expires: nextYear,
     });
@@ -51,7 +80,10 @@ export function setFavouriteVehicle(vehicle: string): void {
     return;
   }
 
-  cookies.set(vehicleKey, `${setVehicles + vehicle},`, { path: '/' });
+  setCookieSafe(vehicleKey, `${setVehicles + vehicle},`, {
+    path: '/',
+    expires: nextYear,
+  });
 }
 
 export function setFavouriteCharacter(character: string): void {
@@ -62,7 +94,7 @@ export function setFavouriteCharacter(character: string): void {
     return;
   }
 
-  cookies.set(charactersKey, `${setCharacters + character},`, {
+  setCookieSafe(charactersKey, `${setCharacters + character},`, {
     path: '/',
     expires: nextYear,
   });
@@ -78,7 +110,7 @@ export function removeFavouriteVehicle(vehicle: string): void {
 
   const toSet = vehicles.filter(name => name !== vehicle && name);
 
-  cookies.set(vehicleKey, `${toSet.join(',')},`, {
+  setCookieSafe(vehicleKey, `${toSet.join(',')},`, {
     path: '/',
     expires: nextYear,
   });
@@ -94,7 +126,7 @@ export function removeFavouriteCharacter(character: string): void {
 
   const toSet = characters.filter(name => name !== character && name);
 
-  cookies.set(charactersKey, `${toSet.join(',')},`, {
+  setCookieSafe(charactersKey, `${toSet.join(',')},`, {
     path: '/',
     expires: nextYear,
   });
@@ -122,7 +154,7 @@ export function setCookie(route: string, cookieName: string): void {
     return;
   }
 
-  cookies.set(route, `${setCookies + cookieName},`, {
+  setCookieSafe(route, `${setCookies + cookieName},`, {
     path: '/',
     expires: nextYear,
   });
@@ -138,7 +170,7 @@ export function removeCookie(route: string, cookieName: string): void {
 
   const toSet = cookie.filter(name => name !== cookieName && name);
 
-  cookies.set(route, `${toSet.join(',')},`, {
+  setCookieSafe(route, `${toSet.join(',')},`, {
     path: '/',
     expires: nextYear,
   });
@@ -171,7 +203,7 @@ export function setOpponentCookie(name: string): void {
 
   const setCookies = cookies.get(counterKey) as CounterObject[];
   setCookies.push(cookieToSet);
-  cookies.set(counterKey, `${JSON.stringify(setCookies)}`, {
+  setCookieSafe(counterKey, `${JSON.stringify(setCookies)}`, {
     path: '/',
     expires: nextYear,
   });
@@ -199,7 +231,7 @@ export function updateOpponentScore(
     tie.opponentName === opponentName ? tieToUpdate : tie
   );
 
-  cookies.set(counterKey, `${JSON.stringify(infos)}`, {
+  setCookieSafe(counterKey, `${JSON.stringify(infos)}`, {
     path: '/',
     expires: nextYear,
   });
@@ -225,7 +257,7 @@ export function updateMyScore(
     tie.opponentName === opponentName ? tieToUpdate : tie
   );
 
-  cookies.set(counterKey, `${JSON.stringify(infos)}`, {
+  setCookieSafe(counterKey, `${JSON.stringify(infos)}`, {
     path: '/',
     expires: nextYear,
   });
@@ -238,7 +270,7 @@ export function updateTie(oldName: string, tie: CounterObject): void {
 
   infos = infos.map(t => (t.opponentName === oldName ? tie : t));
 
-  cookies.set(counterKey, `${JSON.stringify(infos)}`, {
+  setCookieSafe(counterKey, `${JSON.stringify(infos)}`, {
     path: '/',
     expires: nextYear,
   });
@@ -252,7 +284,7 @@ export function deleteTie(opponentName: string): boolean {
   if (infos.length === newInfos.length) {
     return false;
   }
-  cookies.set(counterKey, `${JSON.stringify(newInfos)}`, {
+  setCookieSafe(counterKey, `${JSON.stringify(newInfos)}`, {
     path: '/',
     expires: nextYear,
   });
@@ -265,7 +297,7 @@ export function getQuizHighScore() {
 }
 
 export function setQuizHighScore(score: number) {
-  cookies.set(quizKey, `${score}`, {
+  setCookieSafe(quizKey, `${score}`, {
     path: '/',
     expires: nextYear,
   });

@@ -3,7 +3,6 @@ import './Root.scss';
 import Home from './Components/Home/home.component';
 import Layout from './Components/Layout/layout.component';
 import StatsSummary from './Components/Stats/Summary/stats-summary.component';
-import { region } from './Services/region.service';
 import CharacterSelection from './Components/Stats/CharacterSelection/character-selection.component';
 import KartSelection from './Components/Stats/KartSelection/kart-selection.component';
 import Track from './Components/Track/track.component';
@@ -15,11 +14,9 @@ import Challenge from './Components/Challenge/challenge.component';
 import CharacterGenerator from './Components/CharacterGenerator/character-generator.component';
 import VehicleGenerator from './Components/VehicleGenerator/vehicle-generator.component';
 import QuizQuestion from './Components/Quiz/Question/quiz-question.component';
+import CookieConsent from './Components/CookieConsent/cookie-consent.component';
 
 function SiteRoutes() {
-  // instantiate Region service
-  region();
-
   return (
     <Routes>
       <Route path="/mkwii-utils/" element={<Layout />}>
