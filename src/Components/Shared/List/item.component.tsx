@@ -1,26 +1,24 @@
 import React from 'react';
-import { IconButton } from '@mui/material';
+import Button from '@mui/material/Button/Button';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import '../../../Root.scss';
 import FavouriteButton from '../favourite-button.component';
 import ItemProps from '../../../Models/Props/item.props';
 
-function Item({ cookieKey, onContinue, value }: ItemProps) {
+function Item({ cookieKey, value, onContinue }: ItemProps) {
   return (
     <div className="list-item">
-      <div className="item-title">{value}</div>
+      <Button
+        variant="text"
+        key={`button-${value}`}
+        className="width-90 align-left"
+        color="inherit"
+        onClick={onContinue}
+      >
+        <div className="item-title">{value}</div>
+      </Button>
       <div className="list-buttons">
         <FavouriteButton cookieRoute={cookieKey} cookieName={value} />
-        <div className="continue-button">
-          <IconButton
-            aria-label="fav"
-            size="medium"
-            color="inherit"
-            onClick={onContinue}
-          >
-            <ArrowRightIcon fontSize="inherit" />
-          </IconButton>
-        </div>
       </div>
     </div>
   );

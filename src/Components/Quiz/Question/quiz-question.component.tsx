@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React, { useState } from 'react';
 import Button from '@mui/material/Button/Button';
 import { getRandomCharacter } from '../../../Services/character.service';
@@ -108,52 +109,50 @@ function QuizQuestion() {
     <div className="component">
       <header className="component-header">
         <div className="page-content">
-          {isEndGame ? (
+          <h2 className="name main">Which combo has the higher {stat} stat?</h2>
+          <div style={{ paddingBottom: '30px' }} />
+          <div style={{ width: '50%', display: 'inline-block' }}>
+            <OptionSelection
+              combo={optionA}
+              selectOption={() => optionSelected(optionA)}
+              selected={selected}
+              stat={stat}
+            />
+          </div>
+          <div style={{ width: '50%', display: 'inline-block' }}>
+            <OptionSelection
+              combo={optionB}
+              selectOption={() => optionSelected(optionB)}
+              selected={selected}
+              stat={stat}
+            />
+          </div>
+          {selected ? (
             <>
-              <h2 className="name main">Game Over</h2>
-              <div style={{ paddingBottom: '15px' }} />
-              <p>Score: {score}</p>
-              <p>High score: {getQuizHighScore()}</p>
-              <div style={{ paddingBottom: '15px' }} />
-              <Button
-                variant="contained"
-                className="full-width"
-                onClick={restartGame}
-              >
-                Play Again
-              </Button>
-              <div style={{ paddingBottom: '15px' }} />
-              <Button
-                variant="contained"
-                className="full-width"
-                onClick={shareScore}
-              >
-                Share
-              </Button>
-            </>
-          ) : (
-            <>
-              <h2 className="name main">
-                Which combo has the higher {stat} stat?
-              </h2>
-              <div style={{ paddingBottom: '30px' }} />
-              <div style={{ width: '50%', display: 'inline-block' }}>
-                <OptionSelection
-                  combo={optionA}
-                  selectOption={() => optionSelected(optionA)}
-                  selected={selected}
-                  stat={stat}
-                />
-              </div>
-              <div style={{ width: '50%', display: 'inline-block' }}>
-                <OptionSelection
-                  combo={optionB}
-                  selectOption={() => optionSelected(optionB)}
-                  selected={selected}
-                  stat={stat}
-                />
-              </div>
-              {selected ? (
+              {isEndGame ? (
+                <>
+                  <h2>Game Over</h2>
+                  <div style={{ paddingBottom: '15px' }} />
+                  <p>Score: {score}</p>
+                  <p>High score: {getQuizHighScore()}</p>
+                  <div style={{ paddingBottom: '15px' }} />
+                  <Button
+                    variant="contained"
+                    className="full-width"
+                    onClick={restartGame}
+                  >
+                    Play Again
+                  </Button>
+                  <div style={{ paddingBottom: '15px' }} />
+                  <Button
+                    variant="contained"
+                    className="full-width"
+                    onClick={shareScore}
+                  >
+                    Share
+                  </Button>
+                </>
+              ) : (
                 <>
                   <p>Score: {score}</p>
                   <Button
@@ -164,12 +163,12 @@ function QuizQuestion() {
                     Next Question
                   </Button>
                 </>
-              ) : (
-                <>
-                  <div style={{ paddingBottom: '15px' }} />
-                  <p>Score: {score}</p>
-                </>
               )}
+            </>
+          ) : (
+            <>
+              <div style={{ paddingBottom: '15px' }} />
+              <p>Score: {score}</p>
             </>
           )}
         </div>

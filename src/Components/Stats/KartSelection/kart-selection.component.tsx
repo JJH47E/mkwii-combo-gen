@@ -28,7 +28,7 @@ function KartSelection() {
 
   function onKartSelectFn(vehicle: string) {
     window.scrollTo(0, 0);
-    navigate(`/mkwii-combo-gen/stats/${character.name}/${vehicle}/stats`);
+    navigate(`/mkwii-combo-gen/stats/${character.name}/${vehicle}`);
   }
 
   const karts = vehicleData.find(v => v.class === character.class)

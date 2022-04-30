@@ -67,7 +67,11 @@ function Challenge() {
               </>
             );
           })}
-          <Button variant="contained" onClick={shareChallenge}>
+          <Button
+            variant="contained"
+            className="full-width"
+            onClick={shareChallenge}
+          >
             Share
           </Button>
         </div>

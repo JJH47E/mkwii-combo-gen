@@ -1,9 +1,10 @@
 import React from 'react';
+import Button from '@mui/material/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import CharacterDetail from '../../../Models/character-detail.model';
 import CharacterData from '../../../data/character-class.json';
-import '../../../Root.scss';
 import Item from '../../Shared/List/item.component';
+import '../../../Root.scss';
 
 const characterData = CharacterData as CharacterDetail[];
 
