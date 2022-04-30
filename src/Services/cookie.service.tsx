@@ -5,6 +5,7 @@ const cookies = new Cookies();
 const vehicleKey = 'vehicles';
 const charactersKey = 'characters';
 const counterKey = 'counter';
+const quizKey = 'quiz';
 
 const current = new Date();
 const nextYear = new Date();
@@ -29,6 +30,13 @@ export function initialize(): void {
   const o = cookies.get(counterKey) as string;
   if (!o) {
     cookies.set(counterKey, '[]', {
+      path: '/',
+      expires: nextYear,
+    });
+  }
+  const q = cookies.get(quizKey) as string;
+  if (!q) {
+    cookies.set(quizKey, '0', {
       path: '/',
       expires: nextYear,
     });
@@ -250,4 +258,15 @@ export function deleteTie(opponentName: string): boolean {
   });
 
   return true;
+}
+
+export function getQuizHighScore() {
+  return cookies.get(quizKey) as number;
+}
+
+export function setQuizHighScore(score: number) {
+  cookies.set(quizKey, `${score}`, {
+    path: '/',
+    expires: nextYear,
+  });
 }

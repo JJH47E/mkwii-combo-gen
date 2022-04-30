@@ -3,8 +3,10 @@ import { Button } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
 import KartStats from '../../../Models/kart-stats.model';
-import CharacterStats from '../../../Models/character-stats.model';
-import { getVehicleStats } from '../../../Services/vehicle-stats.service';
+import {
+  getVehicleStats,
+  sumStats,
+} from '../../../Services/vehicle-stats.service';
 import Stat from '../../Shared/Stat/stat.component';
 import { getCharacterStats } from '../../../Services/chartacter-stats.service';
 import '../../../Root.scss';
@@ -115,22 +117,6 @@ function StatsSummary() {
       </header>
     </div>
   );
-}
-
-function sumStats(
-  kartStats: KartStats,
-  characterStats: CharacterStats
-): KartStats {
-  return {
-    driftType: kartStats.driftType,
-    speed: kartStats.speed + characterStats.speed,
-    weight: kartStats.weight + characterStats.weight,
-    acceleration: kartStats.acceleration + characterStats.acceleration,
-    handling: kartStats.handling + characterStats.handling,
-    drift: kartStats.drift + characterStats.drift,
-    offroad: kartStats.offroad + characterStats.offroad,
-    miniturbo: kartStats.miniturbo + characterStats.miniturbo,
-  } as KartStats;
 }
 
 export default StatsSummary;

@@ -13,8 +13,7 @@ import { getCharacter } from '../../../Services/character.service';
 const vehicleData = VehicleData as VehicleClass[];
 
 function KartSelection() {
-  const { characterName, vehicleName } =
-    useParams() as unknown as GeneratorParams;
+  const { characterName } = useParams() as unknown as GeneratorParams;
   if (!characterName) {
     return <ErrorPage />;
   }
