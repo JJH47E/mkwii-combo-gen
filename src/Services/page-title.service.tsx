@@ -13,7 +13,7 @@ const vehicles = vehicleData
   .map(x => x.replaceAll(' ', '%20'));
 
 export function getPageTitle(url: string): string {
-  const siteRoot = '/mkwii-combo-gen';
+  const siteRoot = '/mkwii-utils';
 
   if (characters.some(x => url.endsWith(x))) {
     if (url.includes('stat')) {

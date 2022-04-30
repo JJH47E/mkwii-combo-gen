@@ -22,7 +22,7 @@ function VehicleGenerator() {
 
   const reRollKart = () => {
     navigate(
-      `/mkwii-combo-gen/${characterName}/${getDistinctVehicle(
+      `/mkwii-utils/${characterName}/${getDistinctVehicle(
         character.class,
         vehicleName
       )}`
@@ -30,7 +30,7 @@ function VehicleGenerator() {
   };
 
   const goToSummary = () => {
-    navigate(`/mkwii-combo-gen/${characterName}/${vehicleName}/stats`);
+    navigate(`/mkwii-utils/${characterName}/${vehicleName}/stats`);
   };
 
   return (

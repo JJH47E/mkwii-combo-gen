@@ -18,11 +18,11 @@ function OpponentCounterList() {
   };
 
   const addUser = () => {
-    navigate('/mkwii-combo-gen/counter/add', { replace: false });
+    navigate('/mkwii-utils/counter/add', { replace: false });
   };
 
   const goToUser = (user: CounterObject) => {
-    navigate(`/mkwii-combo-gen/counter/${user.opponentName}`, {
+    navigate(`/mkwii-utils/counter/${user.opponentName}`, {
       replace: false,
     });
   };

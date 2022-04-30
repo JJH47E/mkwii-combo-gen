@@ -6,7 +6,7 @@ function ErrorPage() {
   const navigate = useNavigate();
 
   const homePage = () => {
-    navigate('/mkwii-combo-gen/', { replace: false });
+    navigate('/mkwii-utils/', { replace: false });
   };
 
   return (

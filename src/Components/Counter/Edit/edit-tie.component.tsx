@@ -63,12 +63,12 @@ function EditTie() {
       myScore: newMyScore,
     } as CounterObject);
     // return to previous page
-    navigate('/mkwii-combo-gen/counter', { replace: false });
+    navigate('/mkwii-utils/counter', { replace: false });
   };
 
   const deleteUser = () => {
     deleteTie(tieDetails.opponentName);
-    navigate('/mkwii-combo-gen/counter', { replace: false });
+    navigate('/mkwii-utils/counter', { replace: false });
   };
 
   return (

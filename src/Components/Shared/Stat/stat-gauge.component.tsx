@@ -4,10 +4,8 @@ import StatGaugeProps from '../../../Models/Props/stat-gauge.props';
 import { capitalizeFirstLetter } from '../../../Utils/StringUtils';
 import './Stat.css';
 
-const maxStat = 80;
-
 function StatGauge({ statName, statValue }: StatGaugeProps) {
-  const formatText = (steps: number, proportion: number) => {
+  const formatText = () => {
     return statValue;
   };
 

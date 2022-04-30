@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@mui/material/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import CharacterDetail from '../../../Models/character-detail.model';
 import CharacterData from '../../../data/character-class.json';
@@ -13,7 +12,7 @@ function CharacterSelection() {
 
   function onCharacterSelectFn(character: CharacterDetail) {
     window.scrollTo(0, 0);
-    navigate(`/mkwii-combo-gen/stats/${character.name}`, {
+    navigate(`/mkwii-utils/stats/${character.name}`, {
       replace: false,
     });
   }

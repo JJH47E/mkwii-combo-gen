@@ -22,45 +22,42 @@ function SiteRoutes() {
 
   return (
     <Routes>
-      <Route path="/mkwii-combo-gen/" element={<Layout />}>
+      <Route path="/mkwii-utils/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route
-          path="/mkwii-combo-gen/:characterName"
+          path="/mkwii-utils/:characterName"
           element={<CharacterGenerator />}
         />
         <Route
-          path="/mkwii-combo-gen/:characterName/:vehicleName"
+          path="/mkwii-utils/:characterName/:vehicleName"
           element={<VehicleGenerator />}
         />
         <Route
-          path="/mkwii-combo-gen/:characterName/:vehicleName/stats"
+          path="/mkwii-utils/:characterName/:vehicleName/stats"
           element={<StatsSummary />}
         />
-        <Route path="/mkwii-combo-gen/stats" element={<CharacterSelection />} />
+        <Route path="/mkwii-utils/stats" element={<CharacterSelection />} />
         <Route
-          path="/mkwii-combo-gen/stats/:characterName"
+          path="/mkwii-utils/stats/:characterName"
           element={<KartSelection />}
         />
         <Route
-          path="/mkwii-combo-gen/stats/:characterName/:vehicleName"
+          path="/mkwii-utils/stats/:characterName/:vehicleName"
           element={<StatsSummary />}
         />
-        <Route path="/mkwii-combo-gen/track" element={<Track />} />
+        <Route path="/mkwii-utils/track" element={<Track />} />
+        <Route path="/mkwii-utils/counter" element={<OpponentCounterList />} />
+        <Route path="/mkwii-utils/counter/add" element={<AddOpponent />} />
         <Route
-          path="/mkwii-combo-gen/counter"
-          element={<OpponentCounterList />}
-        />
-        <Route path="/mkwii-combo-gen/counter/add" element={<AddOpponent />} />
-        <Route
-          path="/mkwii-combo-gen/counter/:opponentName"
+          path="/mkwii-utils/counter/:opponentName"
           element={<TieSummary />}
         />
         <Route
-          path="/mkwii-combo-gen/counter/:opponentName/edit"
+          path="/mkwii-utils/counter/:opponentName/edit"
           element={<EditTie />}
         />
-        <Route path="/mkwii-combo-gen/challenge" element={<Challenge />} />
-        <Route path="/mkwii-combo-gen/quiz" element={<QuizQuestion />} />
+        <Route path="/mkwii-utils/challenge" element={<Challenge />} />
+        <Route path="/mkwii-utils/quiz" element={<QuizQuestion />} />
       </Route>
     </Routes>
   );

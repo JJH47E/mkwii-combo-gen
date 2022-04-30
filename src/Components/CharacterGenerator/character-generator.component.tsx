@@ -20,13 +20,11 @@ function CharacterGenerator() {
   const character = getCharacter(characterName);
 
   const reRollCharacter = () => {
-    navigate(`/mkwii-combo-gen/${getRandomCharacter(character.name).name}`);
+    navigate(`/mkwii-utils/${getRandomCharacter(character.name).name}`);
   };
 
   const goToKart = () => {
-    navigate(
-      `/mkwii-combo-gen/${characterName}/${getVehicle(character.class)}`
-    );
+    navigate(`/mkwii-utils/${characterName}/${getVehicle(character.class)}`);
   };
 
   return (
