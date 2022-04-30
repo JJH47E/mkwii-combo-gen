@@ -48,6 +48,8 @@ export function getPageTitle(url: string): string {
       return 'Add';
     case `${siteRoot}/challenge`:
       return 'Challenge';
+    case `${siteRoot}/quiz`:
+      return 'Quiz';
     default:
       if (url.startsWith(`${siteRoot}/counter/`)) {
         return 'Details';

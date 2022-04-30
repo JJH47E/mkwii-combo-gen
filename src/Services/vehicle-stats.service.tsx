@@ -36,3 +36,24 @@ export function sumStats(
     miniturbo: kartStats.miniturbo + characterStats.miniturbo,
   } as KartStats;
 }
+
+export function getStat(stats: KartStats, stat: string): number {
+  switch (stat) {
+    case 'drift':
+      return stats.drift;
+    case 'acceleration':
+      return stats.acceleration;
+    case 'speed':
+      return stats.speed;
+    case 'weight':
+      return stats.weight;
+    case 'handling':
+      return stats.handling;
+    case 'offroad':
+      return stats.offroad;
+    case 'miniturbo':
+      return stats.miniturbo;
+    default:
+      return stats.miniturbo;
+  }
+}

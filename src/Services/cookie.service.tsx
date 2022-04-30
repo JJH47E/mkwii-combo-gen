@@ -35,7 +35,7 @@ export function initialize(): void {
     });
   }
   const q = cookies.get(quizKey) as string;
-  if (!o) {
+  if (!q) {
     cookies.set(quizKey, '0', {
       path: '/',
       expires: nextYear,
