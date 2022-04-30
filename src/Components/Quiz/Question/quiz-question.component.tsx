@@ -97,7 +97,7 @@ function QuizQuestion() {
         .share({
           title: 'MKWii Quiz',
           text: `I scored ${score} on the MKWii Quiz`,
-          url: `https://jjh47e.github.io/mkwii-combo-gen/quiz`,
+          url: `https://jjh47e.github.io/mkwii-utils/quiz`,
         })
         .catch((error: string) => {
           throw new Error(error);

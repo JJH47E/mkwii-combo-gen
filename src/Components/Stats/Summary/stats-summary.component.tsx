@@ -80,7 +80,7 @@ function StatsSummary() {
         .share({
           title: 'MKWii Stats',
           text: `${selectedCombo.name} - ${selectedCombo.vehicle}\n${statTextString}`,
-          url: `https://jjh47e.github.io/mkwii-combo-gen/${selectedCombo.name}/${selectedCombo.vehicle}/stats`,
+          url: `https://jjh47e.github.io/mkwii-utils/${selectedCombo.name}/${selectedCombo.vehicle}/stats`,
         })
         .catch((error: string) => {
           throw new Error(error);

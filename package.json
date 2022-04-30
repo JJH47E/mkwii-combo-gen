@@ -1,7 +1,7 @@
 {
-  "name": "mkwii-combo-gen",
+  "name": "mkwii-utils",
   "version": "0.2.0",
-  "homepage": "https://jjh47e.github.io/mkwii-combo-gen",
+  "homepage": "https://jjh47e.github.io/mkwii-utils",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.8.2",

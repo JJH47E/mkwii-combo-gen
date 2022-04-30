@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '@mui/material/Button/Button';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import '../../../Root.scss';
 import FavouriteButton from '../favourite-button.component';
 import ItemProps from '../../../Models/Props/item.props';

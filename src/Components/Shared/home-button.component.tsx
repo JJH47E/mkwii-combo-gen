@@ -8,7 +8,7 @@ import 'material-icons/iconfont/material-icons.css';
 import '../../Root.scss';
 
 function HomeButton() {
-  const siteRoot = '/mkwii-combo-gen';
+  const siteRoot = '/mkwii-utils';
   const location = useLocation();
   const navigate = useNavigate();
   const url = location.pathname;

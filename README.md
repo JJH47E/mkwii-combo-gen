@@ -1,8 +1,8 @@
-# MKWii-Combo-Gen
+# MKWii-Utils
 
-A random combo generator for Mario Kart Wii.
+A collection of utilities for Mario Kart Wii.
 
-Available here: https://jjh47e.github.io/mkwii-combo-gen/
+Available here: https://jjh47e.github.io/mkwii-utils/
 
 ## Available Scripts
 

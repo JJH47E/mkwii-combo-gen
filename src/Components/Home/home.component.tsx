@@ -13,27 +13,27 @@ function Home() {
   const navigate = useNavigate();
 
   const onClickGen = () => {
-    navigate(`/mkwii-combo-gen/${getRandomCharacter('').name}`);
+    navigate(`/mkwii-utils/${getRandomCharacter('').name}`);
   };
 
   const onClickTrack = () => {
-    navigate('/mkwii-combo-gen/track');
+    navigate('/mkwii-utils/track');
   };
 
   const onClickStats = () => {
-    navigate('/mkwii-combo-gen/stats', { replace: false });
+    navigate('/mkwii-utils/stats', { replace: false });
   };
 
   const onClickCounter = () => {
-    navigate('/mkwii-combo-gen/counter', { replace: false });
+    navigate('/mkwii-utils/counter', { replace: false });
   };
 
   const onClickChallenge = () => {
-    navigate('/mkwii-combo-gen/challenge', { replace: false });
+    navigate('/mkwii-utils/challenge', { replace: false });
   };
 
   const onClickQuiz = () => {
-    navigate('/mkwii-combo-gen/quiz', { replace: false });
+    navigate('/mkwii-utils/quiz', { replace: false });
   };
 
   return (
@@ -90,10 +90,10 @@ function Home() {
           </Button>
           <div style={{ paddingBottom: '15px' }} />
           <GitHubButton
-            href="https://github.com/jjh47e/mkwii-combo-gen"
+            href="https://github.com/jjh47e/mkwii-utils"
             data-color-scheme="no-preference: dark; light: dark; dark: dark;"
             data-size="large"
-            aria-label="Star jjh47e/mkwii-combo-gen on GitHub"
+            aria-label="Star jjh47e/mkwii-utils on GitHub"
           >
             Star
           </GitHubButton>

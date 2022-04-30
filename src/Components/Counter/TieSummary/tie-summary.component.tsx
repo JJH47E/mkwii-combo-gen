@@ -51,7 +51,7 @@ function TieSummary() {
   };
 
   const toEdit = () => {
-    navigate(`/mkwii-combo-gen/counter/${tieDetails.opponentName}/edit`, {
+    navigate(`/mkwii-utils/counter/${tieDetails.opponentName}/edit`, {
       replace: false,
     });
   };

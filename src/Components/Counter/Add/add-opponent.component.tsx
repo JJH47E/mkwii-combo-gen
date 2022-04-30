@@ -25,7 +25,7 @@ function AddOpponent() {
     // set in cookie
     setOpponentCookie(userInput);
     // return to previous page
-    navigate('/mkwii-combo-gen/counter', { replace: false });
+    navigate('/mkwii-utils/counter', { replace: false });
   };
 
   return (

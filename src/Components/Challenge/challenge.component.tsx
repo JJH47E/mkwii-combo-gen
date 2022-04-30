@@ -27,7 +27,7 @@ function Challenge() {
         .share({
           title: 'MKWii Challenge',
           text: `${character.name}\n${vehicle}\n${trackTextString}`,
-          url: 'https://jjh47e.github.io/mkwii-combo-gen',
+          url: 'https://jjh47e.github.io/mkwii-utils',
         })
         .catch((error: string) => {
           throw new Error(error);
