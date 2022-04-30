@@ -4,7 +4,7 @@
 $breakpoints: (phone: 570px, tablet: 768px, desktop: 1024px);
 
 h2.main {
-  margin-top: 15vh;
+  margin-top: 10vh;
 }
 
 .layout {
@@ -151,13 +151,7 @@ h2.main {
   float: right;
   text-align: right;
   color: #FFD700;
-  @include media("<=phone") {
-    width: 50%;
-  }
-  @include media(">phone") {
-    width: 25%;
-  }
-  margin-right: -10px;
+  width: 10%;
 }
 
 button.favourite {
@@ -178,12 +172,7 @@ button.favourite {
 .item-title {
   text-align: left;
   display: inline-flex;
-  @include media("<=phone") {
-    width: 50%;
-  }
-  @include media(">phone") {
-    width: 75%;
-  }
+  width: 100%;
 }
 
 .continue-button {
@@ -203,4 +192,8 @@ button.favourite {
 
 .width-90 {
   width: 90%;
+}
+
+.align-left {
+  text-align: left;
 }

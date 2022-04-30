@@ -42,7 +42,7 @@ function SiteRoutes() {
           element={<KartSelection />}
         />
         <Route
-          path="/mkwii-combo-gen/stats/:characterName/:vehicleName/stats"
+          path="/mkwii-combo-gen/stats/:characterName/:vehicleName"
           element={<StatsSummary />}
         />
         <Route path="/mkwii-combo-gen/track" element={<Track />} />
