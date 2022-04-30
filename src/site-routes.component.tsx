@@ -14,6 +14,7 @@ import EditTie from './Components/Counter/Edit/edit-tie.component';
 import Challenge from './Components/Challenge/challenge.component';
 import CharacterGenerator from './Components/CharacterGenerator/character-generator.component';
 import VehicleGenerator from './Components/VehicleGenerator/vehicle-generator.component';
+import QuizQuestion from './Components/Quiz/Question/quiz-question.component';
 
 function SiteRoutes() {
   // instantiate Region service
@@ -59,6 +60,7 @@ function SiteRoutes() {
           element={<EditTie />}
         />
         <Route path="/mkwii-combo-gen/challenge" element={<Challenge />} />
+        <Route path="/mkwii-combo-gen/quiz" element={<QuizQuestion />} />
       </Route>
     </Routes>
   );

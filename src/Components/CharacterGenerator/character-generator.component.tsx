@@ -13,8 +13,7 @@ import GeneratorParams from '../../Models/Params/generator.param';
 function CharacterGenerator() {
   const navigate = useNavigate();
 
-  const { characterName, vehicleName } =
-    useParams() as unknown as GeneratorParams;
+  const { characterName } = useParams() as unknown as GeneratorParams;
   if (!characterName) {
     return <ErrorPage />;
   }

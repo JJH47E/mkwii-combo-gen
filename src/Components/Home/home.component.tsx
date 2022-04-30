@@ -32,6 +32,10 @@ function Home() {
     navigate('/mkwii-combo-gen/challenge', { replace: false });
   };
 
+  const onClickQuiz = () => {
+    navigate('/mkwii-combo-gen/quiz', { replace: false });
+  };
+
   return (
     <div className="component">
       <header className="component-header">
@@ -75,6 +79,14 @@ function Home() {
             onClick={onClickChallenge}
           >
             Challenge
+          </Button>
+          <div style={{ paddingBottom: '15px' }} />
+          <Button
+            variant="contained"
+            className="full-width"
+            onClick={onClickQuiz}
+          >
+            Quiz
           </Button>
           <div style={{ paddingBottom: '15px' }} />
           <GitHubButton

@@ -7,7 +7,7 @@ const vehicleData = VehicleDataJson as VehicleClass[];
 export function getVehicle(vehicleClass: string): string {
   const vehicles = vehicleData.find(x => x.class === vehicleClass)?.vehicles;
   if (!vehicles) {
-    throw Error();
+    throw Error('vehicle class does not exist');
   }
 
   return vehicles[getRandomInt(vehicles.length)];
