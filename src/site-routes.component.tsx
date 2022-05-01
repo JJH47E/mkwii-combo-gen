@@ -14,7 +14,6 @@ import Challenge from './Components/Challenge/challenge.component';
 import CharacterGenerator from './Components/CharacterGenerator/character-generator.component';
 import VehicleGenerator from './Components/VehicleGenerator/vehicle-generator.component';
 import QuizQuestion from './Components/Quiz/Question/quiz-question.component';
-import CookieConsent from './Components/CookieConsent/cookie-consent.component';
 
 function SiteRoutes() {
   return (
