@@ -26,6 +26,7 @@ export function setCookieConsent(): void {
     path: '/',
     expires: nextYear,
   });
+  initialize();
 }
 
 function setCookieSafe(
@@ -178,6 +179,10 @@ export function removeCookie(route: string, cookieName: string): void {
 
 export function isCookieSet(route: string, cookieName: string): boolean {
   const setCookies = cookies.get(route) as string;
+  if (!setCookies) {
+    return false;
+  }
+
   const cookie = setCookies.split(',');
 
   return cookie.includes(cookieName);

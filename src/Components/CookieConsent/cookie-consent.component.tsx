@@ -1,6 +1,5 @@
+import React from 'react';
 import Button from '@mui/material/Button/Button';
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import '../../Root.scss';
 import { setCookieConsent } from '../../Services/cookie.service';
 
@@ -9,18 +8,12 @@ function CookieConsent({
 }: {
   setConsent: (value: boolean) => void;
 }) {
-  useEffect(() => {
-    window.history.replaceState({}, document.title);
-  }, []);
-
-  const navigate = useNavigate();
-
   const onClickContinue = (consent: boolean) => {
     if (consent) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       setCookieConsent();
     }
-    setConsent(consent);
+    setConsent(true);
   };
 
   return (
@@ -47,9 +40,9 @@ function CookieConsent({
           </p>
           <br />
           <p>
-            In its current state, the app has a load of bugs when cookies are
-            disabled, and it is therefore a requirment to continue on from this
-            point.
+            In its current state, most functionality of the app will work
+            without cookies, however it is not recommended, as you may
+            experience bugs.
           </p>
           <div style={{ paddingBottom: '15px' }} />
           <Button
@@ -58,6 +51,14 @@ function CookieConsent({
             onClick={() => onClickContinue(true)}
           >
             Allow All
+          </Button>
+          <div style={{ paddingBottom: '15px' }} />
+          <Button
+            variant="contained"
+            className="full-width"
+            onClick={() => onClickContinue(false)}
+          >
+            Reject All
           </Button>
         </div>
       </header>
